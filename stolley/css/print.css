@@ -14,7 +14,7 @@ acronym:before { content: attr(title) " ("; }
 /*Close the parentheses behind the acronym*/
 acronym:after {content: ") "; }
 /*Use blockquote styles from the screen*/
-blockquote cite { 
+blockquote cite {
   display: block; /*Cite is usually an inline tag (like bold); this forces it to display as a block-level tag, like a heading--moving it to its own line*/
   font-style: italic; /*Italicize the text in cite, which will be the title of the work*/
   font-weight: normal; /*Because text in the blockquote was bolded above, cite is unbolded by making it "normal")*/

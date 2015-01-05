@@ -5,8 +5,8 @@ authors can not only execute their discourse or visual design, but leave
 behind meaningful, fully human-readable descriptions of the choices made
 to bring the discourse or design into being.
 
-And so that's what I've done here: describing the purpose of every single 
-line of the CSS used in the Lo-Fi Manifesto (with the exception of the 
+And so that's what I've done here: describing the purpose of every single
+line of the CSS used in the Lo-Fi Manifesto (with the exception of the
 Yahoo! Reset CSS, which basically removes all margin and padding, bolding,
 italicizing, etc.)
 
@@ -26,7 +26,7 @@ baseline set of styles.
 (See http://developer.yahoo.com/yui/reset/)
 ==========================================================================
  */
- 
+
 /*
 Copyright (c) 2007, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
@@ -150,9 +150,9 @@ dd a { color: #3333CC; text-decoration: none; } /*Provide some link colors in th
   color: black; /*Make the text black in the container, not green like the rest of the page*/
   background-color: white; /*Make the background bright white, which should please those nearly blinded by the CRT stylings*/
 }
-dd div { 
+dd div {
   padding: 3em 1em 3em 1em; /*Generous padding around the division*/
-  background-image: url(gfx/shadow-top.jpg); /*Put a shadow graphic at the top for a slight 3D effect*/ 
+  background-image: url(gfx/shadow-top.jpg); /*Put a shadow graphic at the top for a slight 3D effect*/
   background-repeat: no-repeat; /*Don't repeat the image, though; show it once and that's it*/
   background-position: center top; /*Center the shadow, no matter the width of the screen*/
   font-family: Verdana, Arial, Helvetica, sans-serif; /*Change the font up from Courier to Verdana*/
@@ -163,7 +163,7 @@ dd blockquote {
   font-size: 125%; /*Make it bigger*/
   font-weight: bold; /*Make it bold*/
   width: 17em; /*Give it a precise width so as to float it (below)*/
-  padding: 1em; /*Padding moves the text back from the edges of the background images*/ 
+  padding: 1em; /*Padding moves the text back from the edges of the background images*/
   margin-top: .4em; /*The top margin moves the blockquote away from the shadow*/
   margin-right: 1em; /*The right margin keeps the running text from getting too close*/
   margin-bottom: 0em; /*And with the generous line-height, there's no need for a bottom margin*/
@@ -184,10 +184,10 @@ dd blockquote p {
  (siblings) that are first children of divs, which are first children of the
   defintion text (dd); this keeps browsers from indenting the blockquote text,
   which is also in a paragraph. There are other ways to achieve this, but this
-  intentionally rewards standard-compliant browsers like Firefox, Opera, and 
+  intentionally rewards standard-compliant browsers like Firefox, Opera, and
   Safari:*/
 dd > div > p + p { text-indent: 2em; margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers. Sorry, IE 6, you lose. */
-blockquote cite { 
+blockquote cite {
   margin-top: .5em; /*Give the citation breathing room under the blockquote*/
   display: block; /*Cite is usually an inline tag (like bold); this forces it to display as a block-level tag, like a heading--moving it to its own line*/
   font-style: italic; /*Italicize the text in cite, which will be the title of the work*/
