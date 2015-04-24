@@ -117,7 +117,7 @@ acronym {
 #container {
   margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the container*/
   padding: 1em; /*Throw some padding around the top, right, bottom, and left of the container*/
-  width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
+  max-width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
 }
 #container * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
 #container * * { margin-bottom: auto; } /*Again an IE-friendly fix for removing margins on list items and other non-first-child descendants. */
