@@ -94,8 +94,8 @@ body {
   background: black url(gfx/crt-texture-dark.gif); /* The CRT-screen effect; displays black background in absence of the crt image*/
   background-attachment: fixed; /*Fixed keeps the background from flickering*/
   color: #00FF00; /*Color the text bright green*/
-  font-size: small; /*Font keywords allow text scaling in all browsers, even IE*/
-  font-family: "Courier New", Courier, mono; /*Establish the base fonts for the page*/
+  font-size: 100%; /*Go with native font-size*/
+  font-family: Menlo, "Courier New", Courier, mono; /*Establish the base fonts for the page*/
 }
 
 /*Basic tag styles*/
@@ -174,13 +174,13 @@ dd div {
   background-image: url(gfx/shadow-top.jpg); /*Put a shadow graphic at the top for a slight 3D effect*/
   background-repeat: no-repeat; /*Don't repeat the image, though; show it once and that's it*/
   background-position: center top; /*Center the shadow, no matter the width of the screen*/
-  font-family: Verdana, Arial, Helvetica, sans-serif; /*Change the font up from Courier to Verdana*/
+  font-family: AvenirNext-Medium, Geneva, Helvetica, Verdana, Arial, sans-serif; /*Change the font up from Courier to Verdana*/
+  font-size: 110%;
 }
 
 dd blockquote {
-  font-family: Georgia, "Times New Roman", Roman, serif; /*Style the blockquote text*/
+  font-family: HoeflerText-Regular, "Hoefler Text", Georgia, "Times New Roman", Roman, serif; /*Style the blockquote text*/
   font-size: 125%; /*Make it bigger*/
-  font-weight: bold; /*Make it bold*/
   width: 17em; /*Give it a precise width so as to float it (below)*/
   padding: 1em; /*Padding moves the text back from the edges of the background images*/
   margin-top: .4em; /*The top margin moves the blockquote away from the shadow*/
