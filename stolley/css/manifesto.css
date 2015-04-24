@@ -212,7 +212,7 @@ blockquote cite {
   font-style: italic; /*Italicize the text in cite, which will be the title of the work*/
   font-weight: normal; /*Because text in the blockquote was bolded above, cite is unbolded by making it "normal")*/
 }
-blockquote em { font-weight: bold; } /*Bold emphasis, in addition to italicizing it. It looks good, don't worry*/
+blockquote em { font-weight: inherit; } /* Italic in whatever weight the overall blockquote is displayed in*/
 blockquote cite.article { font-style: normal; } /*However, don't italicize article names, following APA style*/
 blockquote cite span {
   font-style: normal; /*Keep author names from being italicized, either*/
