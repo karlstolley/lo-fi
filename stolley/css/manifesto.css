@@ -113,28 +113,31 @@ acronym {
 .lo-fi { color: white; } /*Make the lo-fi class white, both in the ASCII art and in the manifesto*/
 
 /*Positioning*/
-#container {
+#main {
   margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the container*/
   padding: 1em; /*Throw some padding around the top, right, bottom, and left of the container*/
   max-width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
 }
-#container * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
-#container * * { margin-bottom: auto; } /*Again an IE-friendly fix for removing margins on list items and other non-first-child descendants. */
-#container ol li { margin-bottom: .3em; }  /*Space the items in the ordered list closely*/
-#container ul li { margin-bottom: 2em; } /*Give some more distance to the unordered lists (the lo-fi technologies list)*/
+#main * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
+#main * * { margin-bottom: auto; } /*Again an IE-friendly fix for removing margins on list items and other non-first-child descendants. */
+#main ol li { margin-bottom: .3em; }  /*Space the items in the ordered list closely*/
+#main ul li { margin-bottom: 2em; } /*Give some more distance to the unordered lists (the lo-fi technologies list)*/
 
 /*Accessibility Styles*/
-h1, .skip {
-  position: absolute; /*Remove these from the document flow...*/
-  left: -1000px; /*...and push them out of the way. Audio screen readers will still "see" them to read to any blind users, allowing such users to skip the ASCII art and whatnot; visual browsers put them way out to the left, somewhere over Dubuque, Iowa.*/
+.js h1, .js .skip {
+  position: absolute; /* In the presence of JavaScript (html.js), remove these from the
+                         document flow...*/
+  left: -10000px; /* ...and push them out of the way. Audio screen readers will still "see" them to
+                    read to any blind users, allowing such users to skip the ASCII art and whatnot;
+                    visual browsers put them way out to the left, somewhere over Dubuque, Iowa.*/
 }
 
 /*Contextual Styles*/
-#container pre {
+#main pre {
   font-size: 120%; /*Bump up the font size for the ASCII art; a different size will be needed for IE in a separate stylesheet file.*/
   margin-bottom: 0em; /*No bottom margin on the ASCII art*/
 }
-div#container h2 {
+div#main h2 {
   margin-top: 6em; /*Generous spacing above all headers*/
   color: #FFFFFF; /*Color them white to stand out, rather than making them larger*/
 }
@@ -162,7 +165,7 @@ dt.accActive {
   color: #FFFFFF; /*When a bullet point is active, keep it white*/
 }
 dd a { color: #3333CC; text-decoration: none; } /*Provide some link colors in the accordion area, rather than the gray in the greenscreen area*/
-#container dd {
+#main dd {
   color: black; /*Make the text black in the container, not green like the rest of the page*/
   background-color: white; /*Make the background bright white, which should please those nearly blinded by the CRT stylings*/
 }
@@ -208,7 +211,7 @@ blockquote cite span {
 }
 
 /*Reference List Styles */
-#container ul.references li {
+#main ul.references li {
   font-size: 90%; /*Reduce the references size*/
   text-indent: -2em; /*Negative text indent with equal, positive padding creates a "hanging" indent effect*/
   padding-left: 2em;
