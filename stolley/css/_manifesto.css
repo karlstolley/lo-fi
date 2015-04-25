@@ -1,0 +1,219 @@
+/*
+
+One of the advantages to some lo-fi technologies, like CSS, is that digital
+authors can not only execute their discourse or visual design, but leave
+behind meaningful, fully human-readable descriptions of the choices made
+to bring the discourse or design into being.
+
+And so that's what I've done here: describing the purpose of every single
+line of the CSS used in the Lo-Fi Manifesto (with the exception of the
+Yahoo! Reset CSS, which basically removes all margin and padding, bolding,
+italicizing, etc.)
+
+All of the visual design for the Lo-Fi Manifesto has been achieved in CSS;
+the animation effects were done using the MooTools JavaScript library. The
+HTML contains only structured content, making it friendly to screen readers,
+mobile devices, and even printed pages.
+
+Thanks for taking the time to look at this file. --Karl Stolley, May 2008
+
+*/
+
+/*
+==========================================================================
+Begin with Eric Meyer's Reset CSS v2.0
+==========================================================================
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+==========================================================================
+End Eric Meyer's Reset CSS v2.0
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+
+The Lo-Fi Manifesto Styles
+
+==========================================================================
+*/
+
+/*Basic Body Features*/
+body {
+  background: #002907; /* A solid color that approximates the old CRT effect from v1.0.1. The effect was cute, and that's about it. In an age of high density/retina displays, it just doesn't hold up well.*/
+  color: #00FF00; /*Color the text bright green*/
+  font-size: 100%; /*Go with native font-size*/
+  font-family: Menlo, Consolas, "Courier New", Courier, mono; /*Establish the base fonts for the page*/
+}
+
+/*Basic tag styles*/
+em { font-style: italic; } /*Italicize the em tag*/
+a { color: #CCCCCC; text-decoration: none; } /*Color the links gray, and remove the underline*/
+strong { font-weight: bold; } /*Bold the strong tag*/
+p, dd, ul, li { line-height: 1.7; } /*Set up a generous line-height; almost double-spaced*/
+ol {
+  list-style-type: decimal; /*Provide the numbers on the ordered list*/
+  margin-left: 2em; /*Offset the list from left with 2ems of margin; em units scale with text*/
+}
+acronym {
+  border-bottom: 1px dotted; /*Put in the dotted border on the acronym tag*/
+  cursor: help; /*Change the mouse cursor to the question-mark pointer*/
+}
+.lo-fi { color: white; } /*Make the lo-fi class white, both in the ASCII art and in the manifesto*/
+
+/*Positioning*/
+#header, #main, #footer {
+  margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the elements*/
+  padding: 1em; /*Throw some padding around the top, right, bottom, and left of the major elements*/
+  max-width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
+}
+#main * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
+#main * * { margin-bottom: auto; } /*Again an IE-friendly fix for removing margins on list items and other non-first-child descendants. */
+#main ol li { margin-bottom: .3em; }  /*Space the items in the ordered list closely*/
+#main ul li { margin-bottom: 2em; } /*Give some more distance to the unordered lists (the lo-fi technologies list)*/
+
+/*Accessibility Styles*/
+.js h1, .js .skip {
+  position: absolute; /* In the presence of JavaScript (html.js), remove these from the
+                         document flow...*/
+  left: -10000px; /* ...and push them out of the way. Audio screen readers will still "see" them to
+                    read to any blind users, allowing such users to skip the ASCII art and whatnot;
+                    visual browsers put them way out to the left, somewhere over Dubuque, Iowa.*/
+}
+
+/*Contextual Styles*/
+#main pre {
+  font-size: 120%; /*Bump up the font size for the ASCII art; a different size will be needed for IE in a separate stylesheet file.*/
+  margin-bottom: 0em; /*No bottom margin on the ASCII art*/
+}
+/* Headings */
+h1,h2 { color: #FFF; }
+
+/*Fancy-Pants Styles*/
+h1:before { content: "#"; padding-right: .6em; } /*Compliant browsers will render Markdown heading levels for h1.*/
+h2:before { content: "##"; padding-right: .6em; } /* Markdown heading levels for h2.*/
+
+ul#lofi-acronym strong {
+  color: white; /*Make it white*/
+  font-weight: normal; /*Keep it normal; a change in color is obvious enough.*/
+}
+
+/*Accordion Styles*/
+dl { border-bottom: 1px dashed #00FF00; /*Bottom border to complete the whole list; top borders are done in the definition term tag (next style)*/}
+dt {
+  padding: .5em 0em .5em 1em; /*Generous padding around the manifesto points*/
+  border-top: 1px dashed #00FF00; /*Again, the top borders for the list of points*/
+  cursor: pointer; /*Make the mouse cursor look like it typically does over hyperlinks, so as to indicate the points are clickable*/
+}
+dt:hover {
+  color: #FFFFFF; /*Fails in IE6, which only accepts the :hover pseudo-class on the anchor (a) selector*/
+}
+dt.accActive {
+  color: #FFFFFF; /*When a bullet point is active, keep it white*/
+}
+dd a { color: #3333CC; text-decoration: none; } /*Provide some link colors in the accordion area, rather than the gray in the greenscreen area*/
+#main dd {
+  color: black; /*Make the text black in the container, not green like the rest of the page*/
+  background-color: white; /*Make the background bright white, which should please those nearly blinded by the CRT stylings*/
+}
+dd div {
+  padding: 3em 1em 3em 1em; /*Generous padding around the division*/
+  font-family: AvenirNext-Medium, "Avenir Next", Geneva, Helvetica, Verdana, Arial, sans-serif; /*Change the font up from Courier to Verdana*/
+  font-size: 110%;
+}
+
+dd blockquote {
+  font-family: HoeflerText-Regular, "Hoefler Text", Georgia, "Times New Roman", Roman, serif; /*Style the blockquote text*/
+  font-size: 125%; /*Make it bigger*/
+  width: 17em; /*Give it a precise width so as to float it (below)*/
+  padding: 1em; /*Padding moves the text back from the edges of the background images*/
+  margin-top: .4em; /*The top margin moves the blockquote away from the shadow*/
+  margin-right: 1em; /*The right margin keeps the running text from getting too close*/
+  margin-bottom: 0em; /*And with the generous line-height, there's no need for a bottom margin*/
+  float: left; /*Float the blockquote left; running text will wrap around it*/
+  color: #003399; /*Use a sort of sky-blue color for the text*/
+  }
+dd blockquote p {
+  padding-bottom: 1em; /*Push the text back from the bottom corner image*/
+  padding-right: 1em; /*Ditto*/
+  }
+/*Complex selector here! It styles any paragraph that follows another paragraph
+  (siblings) that are first children of divs, which are first children of the
+  defintion text (dd); this keeps browsers from indenting the blockquote text,
+  which is also in a paragraph. There are other ways to achieve this, but this
+  intentionally rewards standard-compliant browsers like Firefox, Opera, and
+  Safari:*/
+dd > div > p + p { margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers. Sorry, IE 6, you lose. */
+blockquote cite {
+  margin-top: .5em; /*Give the citation breathing room under the blockquote*/
+  display: block; /*Cite is usually an inline tag (like bold); this forces it to display as a block-level tag, like a heading--moving it to its own line*/
+  font-style: italic; /*Italicize the text in cite, which will be the title of the work*/
+  font-weight: normal; /*Because text in the blockquote was bolded above, cite is unbolded by making it "normal")*/
+}
+blockquote em { font-weight: inherit; } /* Italic in whatever weight the overall blockquote is displayed in*/
+blockquote cite.article { font-style: normal; } /*However, don't italicize article names, following APA style*/
+blockquote cite span {
+  font-style: normal; /*Keep author names from being italicized, either*/
+  font-variant: small-caps; /*Small caps, just for a little visual touch*/
+}
+
+/*Reference List Styles */
+#main ul.references li {
+  font-size: 90%; /*Reduce the references size*/
+  text-indent: -1.2em; /*Negative text indent with equal, positive padding creates a "hanging" indent effect*/
+  padding-left: 1.2em;
+  margin: 0em 0em 1em 0em; /*Put some margin on the bottom of each item to separate the items in the reference list*/
+}
+ul.references cite { font-style: italic; } /*Finally, even though Courier isn't the best font for this, italicize the cites*/
+
