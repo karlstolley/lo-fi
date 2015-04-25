@@ -91,8 +91,7 @@ The Lo-Fi Manifesto Styles
 
 /*Basic Body Features*/
 body {
-  background: black url(gfx/crt-texture-dark.gif); /* The CRT-screen effect; displays black background in absence of the crt image*/
-  background-attachment: fixed; /*Fixed keeps the background from flickering*/
+  background: #002907; /* A solid color that approximates the old CRT effect from v1.0.1. The effect was cute, and that's about it. In an age of high density/retina displays, it just doesn't hold up well.*/
   color: #00FF00; /*Color the text bright green*/
   font-size: 100%; /*Go with native font-size*/
   font-family: Menlo, Consolas, "Courier New", Courier, mono; /*Establish the base fonts for the page*/
