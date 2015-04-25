@@ -88,3 +88,18 @@ The Lo-Fi Manifesto Styles
 
 ==========================================================================
 */
+
+/*
+  Organizing the styles in roughly the pattern recommended in the book
+  *Scalable and Modular Architecture for CSS*, found in partial form
+  at https://smacss.com
+*/
+
+/* Base Styles (Basic Element Selectors; Fonts and Colors) */
+
+/* Layout Styles (Mobile-First; Media-Query-based Styles in State, Below)*/
+
+/* Module Styles (Core, Often Repeated Page Elements) */
+
+/* State Styles (Media Queries and JavaScript-dependent Styles) */
+
