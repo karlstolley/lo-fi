@@ -202,7 +202,7 @@ dd blockquote p {
   which is also in a paragraph. There are other ways to achieve this, but this
   intentionally rewards standard-compliant browsers like Firefox, Opera, and
   Safari:*/
-dd > div > p + p { text-indent: 2em; margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers. Sorry, IE 6, you lose. */
+dd > div > p + p { margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers. Sorry, IE 6, you lose. */
 blockquote cite {
   margin-top: .5em; /*Give the citation breathing room under the blockquote*/
   display: block; /*Cite is usually an inline tag (like bold); this forces it to display as a block-level tag, like a heading--moving it to its own line*/
