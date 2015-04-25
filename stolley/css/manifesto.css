@@ -168,9 +168,6 @@ dd a { color: #3333CC; text-decoration: none; } /*Provide some link colors in th
 }
 dd div {
   padding: 3em 1em 3em 1em; /*Generous padding around the division*/
-  background-image: url(gfx/shadow-top.jpg); /*Put a shadow graphic at the top for a slight 3D effect*/
-  background-repeat: no-repeat; /*Don't repeat the image, though; show it once and that's it*/
-  background-position: center top; /*Center the shadow, no matter the width of the screen*/
   font-family: AvenirNext-Medium, "Avenir Next", Geneva, Helvetica, Verdana, Arial, sans-serif; /*Change the font up from Courier to Verdana*/
   font-size: 110%;
 }
@@ -185,14 +182,8 @@ dd blockquote {
   margin-bottom: 0em; /*And with the generous line-height, there's no need for a bottom margin*/
   float: left; /*Float the blockquote left; running text will wrap around it*/
   color: #003399; /*Use a sort of sky-blue color for the text*/
-  background-image: url(gfx/quote-top.jpg); /*Top background image for quotes...*/
-  background-repeat: no-repeat; /*Don't repeat it*/
-  background-position: top left; /*Place it in the top left corner of the blockquote*/
   }
 dd blockquote p {
-  background-image: url(gfx/quote-bottom.jpg); /*Bottom background image for quotes...*/
-  background-repeat: no-repeat;  /*Again, don't repeat it*/
-  background-position: bottom right; /*Place it in the bottom corner*/
   padding-bottom: 1em; /*Push the text back from the bottom corner image*/
   padding-right: 1em; /*Ditto*/
   }
