@@ -143,11 +143,9 @@ div#container h2 {
 h2:before { content: "/* "; } /*IE Won't do this, but compliant browsers will render C-style comments around h2.*/
 h2:after { content: "  */"; } /*Again, IE Won't do this. Not even version 7.*/
 
-ul#lofi-acronym li:first-letter {
-  color: white; /*Make the first letter white*/
-  font-size: 2em; /*Double its size*/
-  line-height: .5; /*Drastically reduce the line height to keep it from disturbing the other text*/
-  padding-right: .1em; /*Push the other text over ever so slightly*/
+ul#lofi-acronym strong {
+  color: white; /*Make it white*/
+  font-weight: normal; /*Keep it normal; a change in color is obvious enough.*/
 }
 
 /*Accordion Styles*/
