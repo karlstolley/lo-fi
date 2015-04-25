@@ -3,7 +3,7 @@
 dd { height: auto !important; overflow: visible !important;} /*Override inline styles that Mootools puts in.*/
 dt { font-weight: bold !important; } /*Make the manifesto points bold*/
 a { text-decoration: none; color: black; } /*Make links black and not underlined, like any other text*/
-/*Print out the URLs after the links; target those in the manifesto points only (as the only links outside of the manifesto points are in the references list, and those are already visible on the page. For more on this technique, see http://www.alistapart.com/stories/goingtoprint/ */
+/*Print out the URLs after the links; target those in the manifesto points only (as the only links outside of the manifesto points are in the references list, and those are already visible on the page). For more on this technique, see http://www.alistapart.com/stories/goingtoprint/ */
 dl a:link:after, dl a:visited:after {
   content: " [" attr(href) "] "; /*Link will be printed in brackets*/
   font-size: 90%; /*Print slightly smaller; these things can be long*/

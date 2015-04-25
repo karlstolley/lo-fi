@@ -73,7 +73,7 @@ The Lo-Fi Manifesto Styles
 
 /*Basic Body Features*/
 body {
-  background: black url(gfx/crt-texture-dark.gif); /*The CRT-screen effect; displays black background in absence of the crt image*/
+  background: black url(gfx/crt-texture-dark.gif); /* The CRT-screen effect; displays black background in absence of the crt image*/
   background-attachment: fixed; /*Fixed keeps the background from flickering*/
   color: #00FF00; /*Color the text bright green*/
   font-size: small; /*Font keywords allow text scaling in all browsers, even IE*/
@@ -94,16 +94,17 @@ acronym {
   cursor: help; /*Change the mouse cursor to the question-mark pointer*/
 }
 .lo-fi { color: white; } /*Make the lo-fi class white, both in the ASCII art and in the manifesto*/
+
 /*Positioning*/
 #container {
   margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the container*/
   padding: 1em; /*Throw some padding around the top, right, bottom, and left of the container*/
   width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
 }
-#container * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one anothe (e.g., paragraphs, headings, lists)*/
+#container * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
 #container * * { margin-bottom: auto; } /*Again an IE-friendly fix for removing margins on list items and other non-first-child descendants. */
 #container ol li { margin-bottom: .3em; }  /*Space the items in the ordered list closely*/
-#container ul li { margin-bottom: 2em; } /*Give some more distaince to the unorded lists (the lo-fi technologies list)*/
+#container ul li { margin-bottom: 2em; } /*Give some more distance to the unordered lists (the lo-fi technologies list)*/
 
 /*Accessibility Styles*/
 h1, .skip {
@@ -133,7 +134,7 @@ ul#lofi-acronym li:first-letter {
 }
 
 /*Accordion Styles*/
-dl { border-bottom: 1px dashed #00FF00; /*Bottom border to complete the whole list; top borderds are done in the definition term tag (next style)*/}
+dl { border-bottom: 1px dashed #00FF00; /*Bottom border to complete the whole list; top borders are done in the definition term tag (next style)*/}
 dt {
   padding: .5em 0em .5em 1em; /*Generous padding around the manifesto points*/
   border-top: 1px dashed #00FF00; /*Again, the top borders for the list of points*/
@@ -181,7 +182,7 @@ dd blockquote p {
   padding-right: 1em; /*Ditto*/
   }
 /*Complex selector here! It styles any paragraph that follows another paragraph
- (siblings) that are first children of divs, which are first children of the
+  (siblings) that are first children of divs, which are first children of the
   defintion text (dd); this keeps browsers from indenting the blockquote text,
   which is also in a paragraph. There are other ways to achieve this, but this
   intentionally rewards standard-compliant browsers like Firefox, Opera, and
