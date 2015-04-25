@@ -113,9 +113,9 @@ acronym {
 .lo-fi { color: white; } /*Make the lo-fi class white, both in the ASCII art and in the manifesto*/
 
 /*Positioning*/
-#main {
-  margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the container*/
-  padding: 1em; /*Throw some padding around the top, right, bottom, and left of the container*/
+#header, #main, #footer {
+  margin: 0px auto 0px auto; /*No margin on the top and bottom; auto margins on left and right center the elements*/
+  padding: 1em; /*Throw some padding around the top, right, bottom, and left of the major elements*/
   max-width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard!*/
 }
 #main * { margin-bottom: 2em; } /*Not nearly as elegant as the immediate child selector, > , but an IE-friendly fix for spacing immediate children apart from one another (e.g., paragraphs, headings, lists)*/
@@ -137,14 +137,12 @@ acronym {
   font-size: 120%; /*Bump up the font size for the ASCII art; a different size will be needed for IE in a separate stylesheet file.*/
   margin-bottom: 0em; /*No bottom margin on the ASCII art*/
 }
-div#main h2 {
-  margin-top: 6em; /*Generous spacing above all headers*/
-  color: #FFFFFF; /*Color them white to stand out, rather than making them larger*/
-}
+/* Headings */
+h1,h2 { color: #FFF; }
 
 /*Fancy-Pants Styles*/
-h2:before { content: "/* "; } /*IE Won't do this, but compliant browsers will render C-style comments around h2.*/
-h2:after { content: "  */"; } /*Again, IE Won't do this. Not even version 7.*/
+h1:before { content: "#"; padding-right: .6em; } /*Compliant browsers will render Markdown heading levels for h1.*/
+h2:before { content: "##"; padding-right: .6em; } /* Markdown heading levels for h2.*/
 
 ul#lofi-acronym strong {
   color: white; /*Make it white*/
