@@ -211,8 +211,8 @@ blockquote cite span {
 /*Reference List Styles */
 #main ul.references li {
   font-size: 90%; /*Reduce the references size*/
-  text-indent: -2em; /*Negative text indent with equal, positive padding creates a "hanging" indent effect*/
-  padding-left: 2em;
+  text-indent: -1.2em; /*Negative text indent with equal, positive padding creates a "hanging" indent effect*/
+  padding-left: 1.2em;
   margin: 0em 0em 1em 0em; /*Put some margin on the bottom of each item to separate the items in the reference list*/
 }
 ul.references cite { font-style: italic; } /*Finally, even though Courier isn't the best font for this, italicize the cites*/
