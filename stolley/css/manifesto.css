@@ -95,11 +95,96 @@ The Lo-Fi Manifesto Styles
   at https://smacss.com
 */
 
-/* Base Styles (Basic Element Selectors; Fonts and Colors) */
+/* Base Styles (Basic Element Selectors; Typefaces and Colors) */
+html {
+  background: #002907; /*
+                          A solid color that approximates the old CRT effect from v1.0.1.
+                          The effect was cute, and that's about it. In an age of high
+                          density/retina displays, it just doesn't hold up well.
+                       */
+  color: #00FF00; /* Color the text bright green */
+  font-size: 100%; /* Go with native font-size */
+  font-family: Menlo, Consolas, "Courier New", Courier, mono; /*
+                                                                Establish the base typefaces for the
+                                                                page.
+                                                              */
+  -webkit-text-size-adjust: none; /*
+                                     Correct a rendering bug in Safari on iOS that over-inflates
+                                     text sizes on a landscape rotation shift.
+
+                                     NOTE: Might remove this property or move into a pixel-density-
+                                     based media-query.
+
+                                  */
+}
+body { line-height: 1.8; } /* Set up a generous line-height; almost double-spaced */
+i,em { font-style: italic; } /*Italicize the em tag*/
+b,strong { font-weight: bold; } /* Bold the strong tag */
+h1,h2 {
+  color: #FFF;
+}
+h1:before {
+  content: "#"; /*Compliant browsers will render Markdown-style headings for h1.*/
+  padding-right: .6em; /*
+                          Better control over spacing with padding, rather than a space in
+                          generated content. This sets up fancier styling in media-query-based
+                          styles in the State section below.
+                       */
+}
+h2:before {
+  content: "##";  /* Markdown heading levels for h2.*/
+  padding-right: .6em; /* Again, put the visual equivalent of a space */
+}
+ol {
+  list-style-type: decimal; /* Provide numbers on the ordered list */
+}
+a { color: #CCCCCC; text-decoration: none; } /* Color the links gray, and remove the underline */
+abbr {
+  border-bottom: 1px dotted; /*Put in the dotted border on the abbr tag*/
+  cursor: help; /*Change the mouse cursor to the question-mark pointer*/
+}
+
+
+
 
 /* Layout Styles (Mobile-First; Media-Query-based Styles in State, Below)*/
+body {
+  padding: 1.8em 1.2em;
+}
+p {
+  padding-bottom: 1.8em;
+}
+ol,ul,li,h1,h2 {
+  padding-bottom: .9em;
+}
+ol {
+  margin-left: 3em; /*
+                      Offset the list from left with 3ems of margin; list numbers will appear
+                      indented two spaces in compared to running text.
+                    */
+}
 
 /* Module Styles (Core, Often Repeated Page Elements) */
-
+.lo-fi { color: #FFF; } /*
+                            Make the lo-fi class text white, both in the ASCII art and in the
+                            manifesto
+                         */
+ul.references li {
+  text-indent: -1.2em; /*
+                          Negative text indent with equal, positive padding creates a "hanging"
+                          indent effect; 1.2 em is about equal to two spaces in monospace
+                       */
+  padding-left: 1.2em;
+}
+ul.references cite {
+  font-style: italic; /* Even though Courier isn't the best font for this, italicize the cites */
+}
+#header h2 {
+  color: inherit; /* No white on h2 (my name/affiliation) */
+}
+#header h2:before {
+  content: none; /* No Markdown hashes, either; make it look like regular running text */
+  padding-right: 0; /* Lose the extra padding on h2:before, too */
+}
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
-
+.nojs dt { color: #FFF; }
