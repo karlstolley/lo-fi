@@ -175,6 +175,8 @@ ul.references li {
                           indent effect; 1.2 em is about equal to two spaces in monospace
                        */
   padding-left: 1.2em;
+  overflow: hidden; /* Hide long URLs that don't break properly */
+  text-overflow: ellipsis; /* Indicate hiddenness by displaying an ellipsis */
 }
 ul.references cite {
   font-style: italic; /* Even though Courier isn't the best font for this, italicize the cites */
