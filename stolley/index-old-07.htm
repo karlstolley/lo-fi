@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Lo-Fi Manifesto</title>
+<script type="text/javascript" src="mootools.js"></script>
+<style type="text/css" media="print">
+dd { height: auto !important; }
+</style>
+<style type="text/css" media="screen">
+<!--
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset, img { border:0; }
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol, ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+em { font-style: italic; }
+q:before, q:after { content:''; }
+abbr, acronym { border:0; }
+body {
+  background: black url(crt-texture.gif);
+  background-attachment: fixed;
+  color: #00FF00;
+  font-size: small;
+  font-family: "Courier New", Courier, mono;
+}
+#container {
+  position: relative;
+  margin: 0px auto 0px auto;
+  padding: 1em;
+  width: 49.5em;
+}
+#container > * { margin-bottom: 2em; }
+p, dd, ul { line-height: 1.7; }
+ol {
+  list-style-type: decimal;
+  margin-left: 2em;
+}
+ol li { margin-bottom: 1em; }
+li { margin-bottom: 2em; }
+.lo-fi { color: white; }
+acronym {
+  border-bottom: 1px dotted;
+  cursor: default;
+}
+h1, .skip {
+  position: absolute;
+  left: -1000px;
+}
+#container pre {
+  font-size: 120%; /*Must be corrected for IE*/
+  margin-bottom: 0em;
+}
+div#container > h2 {
+  margin-top: 3em;
+  color: #FFFFFF;
+}
+h2:before { content: "/* "; }
+h2:after { content: "  */"; }
+strong { font-weight: bold; }
+ul#lofi-acronym li:first-letter {
+  color: white;
+  font-size: 2em;
+  line-height: .5;
+  padding-right: .1em;
+}
+/*Accordion Properties*/
+dl { border-bottom: 1px dashed #00FF00; }
+dt {
+  padding: .5em 0em .5em 1em;
+  border-top: 1px dashed #00FF00;
+}
+#container dd {
+  color: white;
+  background-color: black;
+  background-image: url(glow-bottom.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+dd > div { 
+  padding: 2em 1em 2em 1em;
+  background-image: url(glow-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+dt:hover {
+  color: #FFFFFF;
+  /*background-color: #00FF00;*/
+  /*border-top: 1px solid #00FF00;*/
+  cursor: pointer;
+}
+dt.accActive {
+  color: #FFFFFF;
+  /*background-color: #00FF00;*/
+  /*border-top: 1px dashed #00FF00;*/
+  border-bottom: 1px dashed #00FF00;
+}
+dd blockquote {
+  font-family: Georgia, "Times New Roman", Roman, serif;
+  font-size: 125%;
+  /*width: 30em;
+  float: left;*/
+  }
+dd > div > p + p { text-indent: 2em; }
+blockquote cite { 
+  display: block;
+  font-style: italic;
+}
+blockquote cite span {
+  font-style: normal;
+  font-variant: small-caps;
+}
+-->
+</style>
+<script type="text/javascript">
+//set up the classes the accordion extension needs
+window.addEvent('domready', function() {
+var myDefTerms = $ES('dt','manifesto-points');
+var myDefDefs = $ES('dd','manifesto-points');
+for (i=0;i<myDefTerms.length;i++)
+{
+  myDefTerms.addClass('toggler atStart');
+ }
+for (i=0;i<myDefDefs.length;i++)
+{
+  myDefDefs.addClass('element atStart');
+ }
+});
+//run the accordion on manifesto-points
+window.addEvent('domready', function(){
+var accordion = new Accordion('dt.atStart', 'dd.atStart', {
+	alwaysHide: true,
+	opacity: false,
+	display: false,
+	duration: 1000,
+	onActive: function(toggler, element){
+		toggler.addClass('accActive');
+	},
+ 	onBackground: function(toggler, element){
+		toggler.removeClass('accActive');
+	}
+}, $('manifesto-points'));
+});
+
+</script>
+</head>
+<body>
+<div id="container">
+  <h1>The L0-FI Manifesto</h1>
+  <p class="skip">ASCII art appears below. Skip to main content.</p>
+  <pre title="The LO-FI Manifesto"><!--This is a perversion of XHTML and CSS. Don't do this. Ever.-->          __    __
+         / /_  / /_    ___ <span class="lo-fi"> __     ____            ______  ____</span>
+        / __/ / __ \  / _ \<span class="lo-fi">/ /    / __ \          / ____/ /  _/</span>
+       / /_  / / / / /  __<span class="lo-fi">/ /    / / / / ______  / /_     / /</span>
+       \__/ /_/ /_/_ \___<span class="lo-fi">/ /___ / /_/ / /_____/ / __/   _/ /</span>  __
+            /  |/  / ___<span class="lo-fi">/_____/</span>_<span class="lo-fi">\____</span>(_) / __/ <span class="lo-fi">/_/</span>    _<span class="lo-fi">/___/</span> / /_  ____
+           / /|_/ / / __ `/ / __ \  / / / /_  / _ \  / ___/ / __/ / __ \
+          / /  / / / /_/ / / / / / / / / __/ /  __/ (__  ) / /_  / /_/ /
+         /_/  /_/  \__,_/ /_/ /_/ /_/ /_/    \___/ /____/  \__/  \____/
+
+              
+               + - + - + - + - +   + - + - + - + - + - + - + - + 
+               | K | A | R | L |   | S | T | O | L | L | E | Y |
+               + - + - + - + - +   + - + - + - + - + - + - + - +
+</pre>
+  <h2>Preamble</h2>
+  <p>The time has come to reject expensive consumer and prosumer software that
+    limits the extensibility of digital discourse and binds digital production
+    skills to programs that are destined for disruptive upgrades or obsolescence.</p>
+  <p>The digital discourse that we, in the loosely-defined fields of rhetoric
+    and composition, computers and writing, and technical communication, ought
+    to be producing should be software- and device-independent.</p>
+  <p>Futhermore, the skills and language we develop as digital producers in our
+    efforts to advance scholarship and knowledge-making should also enable us
+    to speak confidently, authoritatively, and unambiguously with one another
+    about production, regardless of who can afford or install what at their home
+    institutions or on their personal machines.</p>
+  <p>And as teachers, we should actively seek to provide students with sustainable,
+    extensible digital literacies through open, rhetorically grounded digital
+    production practices. Neither Flash, Word, Dreamweaver nor any one software
+    package is consistent with that goal.</p>
+  <h2>Defining Lo-fi Technologies</h2>
+  <p>Lo-fi production technologies are basic, free, and consist of and/or can
+    retrograde to:</p>
+  <ol>
+    <li>Plain text files (.txt, .xml, .htm, .css, .js, etc.)</li>
+    <li>Plain text editors (Notepad, TextEdit, pico/nano, vi, etc.)</li>
+    <li>Languages expressed in plain text (XML, XHTML, CSS, JavaScript, etc.)</li>
+  </ol>
+  <p>Yet despite their humble origins, lo-fi technologies can indeed provide
+    user experiences that are remarkable hi-fi, like <acronym title="Asychronous JavaScript and XML">AJAX</acronym> (whose
+    most famous application may be Google's Gmail service).</p>
+  <h2>Lo-fi is <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym></h2>
+  <p>Although “lo-fi” describes a preferred class of technologies for digital
+    producers to use, as an acronym, <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym> outlines
+    four production principles that are crucial to the future of digital discourse:</p>
+  <ul id="lofi-acronym">
+    <li><strong>Lossless</strong>: Discourse presented through lo-fi production
+      technologies neither degrades nor becomes trapped in the production itself.
+      Text migrates and transforms from a single source (e.g., XML or an application
+      of XML); images, video, and other media elements maintain their integrity
+      as individual files..</li>
+    <li><strong>Open</strong>: Lo-fi artifacts’ source code and media elements
+      are available for inspection, revision, and extension outside the scope
+      of any one piece of production software, and any one producer. Openness
+      includes, by default, end-user/reader customization and repurposing.</li>
+    <li><strong>Flexible</strong>: Content presented using lo-fi production technologies
+      can be experienced unobstrusively in multiple ways by different users equipped
+      with a wide variety of conventional, mobile, and adaptive devices.</li>
+    <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct
+      orchestration (like a recipe), not composition (like a TV dinner), allowing
+      users’ devices to interpret and perhaps repurpose the digital artifact.</li>
+  </ul>
+  <h2>Manifesto</h2>
+  <dl id="manifesto-points">
+    <!--JavaScript should really loop through and add the toggler/element and atStart classes-->
+    <dt>Software is a poor organizing principle for digital production.</dt>
+    <dd>
+      <div>
+        <blockquote>
+          <p>“What program do you use?” is a question I often get about the slides
+            I use to present my work. I have concluded that the proper answer
+            to the question is to counter-suggest the asking of a different question,
+            “What <em>principle</em> do you use?” <cite><span>John Maeda,</span> The
+            Laws of Simplicity</cite></p>
+        </blockquote>
+        <p>Digital rhetoricians should be concerned when a software program like
+          Microsoft PowerPoint becomes so ubiquitous that <em>PowerPoint</em> is
+          synonymous with <em>slideshow</em> the way <em>Kleenex</em> is synonymous
+          with <em>tissue</em>. Genres, in other words, should be free agents—and
+          not owned by any one company or program.</p>
+        <p><a href="http://meyerweb.com/">Eric Meyer</a>, CSS guru and all-around
+          design wizard, has worked to collaboratively develop a <a href="http://meyerweb.com/eric/tools/s5/">Simple
+          Standards-based Slide Show System</a> (S5) that uses structural XHTML,
+          media-specific CSS, and crossbrowser JavaScript to deploy slide shows.
+          Unlike PowerPoint, which requires either the PowerPoint software itself
+          or the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=048DC840-14E1-467D-8DCA-19D2A8FD7485&amp;displaylang=en">Microsoft
+          PowerPoint Viewer</a>, S5 runs in any web browser. If a speaker needs
+          speaker’s notes, she only needs to hit print from <a href="http://meyerweb.com/eric/tools/s5/s5-intro.html">the
+          slideshow itself</a>, and let <a href="http://www.alistapart.com/articles/goingtoprint/">a
+          print-based CSS file</a> do the rest.</p>
+        <p>Lo-fi systems like S5 (there are others, like <a href="http://www.opera.com/support/tutorials/operashow/">Opera
+            Show</a>, which takes advantage of the Opera browser’s support for <a href="http://www.w3.org/TR/REC-CSS2/media.html#media-types">the
+            CSS “projection” media type</a>; S5 <a href="http://meyerweb.com/eric/thoughts/2006/01/12/opera-and-s5-12a1/">also
+            addresses</a> this special Opera functionality) necessarily shift
+            producers’ focus from expensive and bulky, plugin-/software-dependent
+            PowerPoint presentations to the genre itself, the organizing princple
+            from rhetoric that has withheld the tests of time (and indeed, challenges
+            to various genres and the concept of genre itself). Better still,
+            systems like S5 result in artifacts that can be opened, viewed, and
+            presented in the most ubiquitous piece of software yet invented:
+            the Web browser. No special plugins or downloads required: an audience-friendly
+            rhetorical aim that is too often neglected.</p>
+      </div>
+    </dd>
+    <dt>Digital literacy is too important to be entrusted to software.</dt>
+    <dd>
+      <div>
+        <blockquote>
+          <p>Technologies may be the most profound when they disappear. But when
+            this happens, they also develop the most potential for being dangerous. <cite title="Page 160"><span>Cynthia
+            Selfe,</span> Technology and Literacy in the Twenty-First Century</cite></p>
+        </blockquote>
+        <p>Adobe’s <a href="http://www.adobe.com/aboutadobe/invrelations/adobeandmacromedia.html">announcement</a> in
+          spring of 2005 that they would be acquiring Macromedia—the company
+          behind Flash, Dreamweaver, and other web production software mainstays—should
+          have raised very serious questions about producing and teaching too
+          closely with particular software technologies, which can potentially
+          disappear as quickly as the ink dries on a corporate merger.</p>
+        <p>Yet even community-developed, open-souce software is not necessarily
+          the answer to the inherent troubles of corporate software packages.
+          While the digital production literacies developed through open technologies
+          may be free from corporate mergers (though not necessarily corporate
+          buyouts), they do not provide for an “under the hood” digital literacy
+          that lo-fi technologies do, particlarly production languages.</p>
+        <p>Digital literacy is too important to be left to the tumultuous uncertainties
+          of software, like corporate acquisitions, mergers, and frequent disruptive
+          version releases. Software has two destinations: upgrade or obsolescence.
+          Either one is disruptive.</p>
+        <p>Languages, on the other hand, while subject to future versions, often
+          retain much of their essential character (cf. SGML, HTML, XML, etc.)
+          or share a few common ancestors (e.g., C/C++)—and can be safely used
+          even after a revision of the language (e.g., one can confidently write
+          in HTML 4.01, even though XHTML 1.0 is preferable). And in the best
+          cases, as when one follows “<a href="http://www.literateprogramming.com/">literate
+          programming</a>” practices, literacy can be preserved and passsed on,
+          even demonstrated—the code serves not only the machine that must intepret
+          it, but human beings who might attempt to reconfigure, revise, or repurpose
+          it.</p>
+      </div>
+    </dd>
+    <dt>Content should never be trapped by production technologies.</dt>
+    <dd>
+      <div>
+        <p>Many popular software programs (PowerPoint, Word, Acrobat, etc.) create
+          “roach motels” for content and information: the data checks in (via
+          File &gt; Import), but it never checks out. </p>
+        <p> Single-sourcing with XML technologies is quickly becoming the singular,
+          unparalleled method to present content; single-media files for image,
+          sound, and video should remain separate and be linked or otherwise
+          referenced outside of a File &gt; Import scheme.</p>
+      </div>
+    </dd>
+    <dt>Code is just as important as content.</dt>
+    <dd>
+      <p>Well, it is. Especially with lo-fi technologies. In lo-fi, we rely on
+        human-editable code, rather than corporate secrets, to make communication
+        happen. Therefore, the code is just as important as the content; it's
+        basically impossible to have one without the other.</p>
+    </dd>
+    <dt>Learn and use Internet media and primitive data types.</dt>
+    <dd>
+      <p>MIME types, primitive data types are the building blocks of all languages,
+        from XML (sort of) to MySQL.</p>
+    </dd>
+    <dt>Acts of digital production should contribute to a deeper literacy.</dt>
+    <dd>
+      <p>That is, digital production has as its end more than the production
+        of an artifact; rather, digital production should broaden one's coneptions
+        of digital communication and technology, and prepare one for increasingly
+        sophisticated/advanced methods and technologies of production.</p>
+    </dd>
+    <dt>To produce and not teach is selfish; to teach and not produce is negligent.</dt>
+    <dd>
+      <p>Harsh truths require harsh words. One of the great things about working
+        with lo-fi technologies like languages is that there is a vast discourse
+        community, spanning many disciplines, fields, and professions, whose
+        members are all tackling similar production problems. And because these
+        communities are working with languages, tapping into the community is
+        as simple as typing a tag, a language construct, or an error message
+        into a search engine.</p>
+    </dd>
+    <dt>Respect and forgive (and perhaps educate) the end user.</dt>
+    <dd>
+      <p>The good will of a digital audience is soon lost when their first encounter
+        with a piece of digital discourse is a series of messages to install
+        or upgrade software and plugins or, worse still, that their equipment
+        (and perhaps by extension, financial status, physical ability) is inadequate
+        and beyond your toleration.</p>
+    </dd>
+    <dt>If a hi-fi solution is necessary, keep it dynamic and unobtrusive.</dt>
+    <dd>
+      <div>
+        <p>Ultimately, there are production problems that lo-fi technologies
+          are not yet poised to solve: vector graphics (until the SVG standard
+          is more widely implemented) and 3D modeling are two examples. Yet even
+          sound and video are still available only through media players and
+          plugins; no browser has native support for sound (even IE relies on
+          its close marriage with Windows Media Player).</p>
+        <p>Lo-fi typography, too, is lagging behind its hi-fi counterparts. Designing
+          with CSS means limiting oneself to fonts commonly available on most
+          systems. While there are glimmers of hope that major Web browsers will
+          enable <a href="http://www.alistapart.com/articles/cssatten">support
+          for TrueType Web fonts</a>—fonts that can be accessed over the Web
+          (versus requiring installation on an end-user’s computer)—for now the
+          typography tool of choice is <a href="http://www.mikeindustries.com/sifr">Scalable
+          Inman Flash Replacement</a> (sIFR, pron. “siffer,” currently in <a href="http://novemberborn.net/sifr3">version
+          3</a>). sIFR relies on the lo-fi technologies of structural HTML, CSS,
+          and JavaScript, plus a small, empty Flash movie containing the font
+          one wishes to use with an HTML page.</p>
+        <p>If a reader’s browser lacks or has disabled JavaScript or the Flash
+          player, the lo-fi CSS styling or simple HTML text will be displayed
+          instead: a dynamic (and unobtrusive) improvement over CSS <a href="http://www.mezzoblue.com/tests/revised-image-replacement/">image
+          replacement techniques</a>—many of which fail in an imageless CSS-enabled
+          environment.</p>
+        <p>The use of any hi-fi technology should operate much like sIFR: taking
+          some readily available media element or text, and tricking it out with
+          extended functionality for properly equipped users. The videos on YouTube,
+          for example, are most likely dynamically loaded into a shell Flash
+          movie that contains the controls for playing and pausing the video
+          clip. However, if YouTube were to be fully unobtrusive, they would
+          offer links in the HTML to movies in different formats (until an open,
+          widely supported format were available; see “Insist on open standards
+          and formats” below). Of course, that would make for easy downloading
+          and local storage of the videos on YouTube (which would be good for
+          users, bad for YouTube and its sponsors, as well as copyright holders).</p>
+      </div>
+    </dd>
+    <dt>Insist on open standards and formats.</dt>
+    <dd>
+      <p>It's astounding that there are not yet open standards for sound or video.
+        The Ogg media container and its Vorbis and Theora CODECs, for sound and
+        video respectively, are both promising and encouraged on Wikipedia, particularly
+        the Wikimedia Commons. Unfortunately, at present, Ogg formats require
+        CODECs to be downloaded for use within other media players, adding an
+        extra step to downloading Windows Media Player, QuickTime, or other players.
+        (However, there is talk of <a href="http://mozillalinks.org/wp/2007/06/firefox-3-to-feature-native-audio-video-support/">native
+        Ogg support within Firefox</a> coupled with the <a href="http://www.whatwg.org/">WHATWG</a>’s <a href="http://www.whatwg.org/specs/web-apps/current-work/">HTML
+        5 Draft</a> specification.) standards are openly available from W3C,
+        ECMA, ISO, IANA, and others. Provide a list of common ones, plus links
+        to human-friendly/non-engineer versions of them.</p>
+    </dd>
+    </dd>
+  </dl>
+</div>
+</body>
+</html>

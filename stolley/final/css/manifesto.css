@@ -1,0 +1,179 @@
+/*
+
+Begin with Yahoo! Reset-min CSS
+(See http://developer.yahoo.com/yui/reset/)
+
+ */
+ 
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset, img { border:0; }
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol, ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+a:hover { text-decoration: underline; }
+q:before, q:after { content:''; }
+abbr, acronym { border:0; }
+
+/*
+
+End Yahoo! Reset CSS
+
+*/
+
+
+/*
+
+Manifesto Styles
+
+*/
+
+/*Basic Body Features*/
+body {
+  background: black url(gfx/crt-texture-dark.gif);
+  background-attachment: fixed; /*Fixed keeps the background from flickering*/
+  color: #00FF00;
+  font-size: small; /*Font keywords allow text scaling in all browsers, even IE*/
+  font-family: "Courier New", Courier, mono;
+}
+
+/*Basic tag styles*/
+em { font-style: italic; }
+a { color: #CCCCCC; text-decoration: none; }
+strong { font-weight: bold; }
+p, dd, ul, li { line-height: 1.7; }
+ol {
+  list-style-type: decimal;
+  margin-left: 2em;
+}
+acronym {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+.lo-fi { color: white; }
+/*Positioning*/
+#container {
+  margin: 0px auto 0px auto;
+  padding: 1em; /*Em units are a measure relative to text size*/
+  width: 49.5em; /*49.5ems is approximately 80 characters across--the old terminal standard*/
+}
+#container * { margin-bottom: 2em; } /*Not nearly as elegant as the child selector, > , but an IE-friendly fix*/
+#container * * { margin-bottom: auto; } /*Again, not nearly as elegant, but IE-friendly fix*/
+#container ol li { margin-bottom: .3em; }
+#container ul li { margin-bottom: 2em; }
+
+/*Accessibility Styles*/
+h1, .skip {
+  position: absolute; /*Remove these from the document flow...*/
+  left: -1000px; /*...and push them out of the way; screen readers will still "see" them to read to any blind users*/
+}
+
+/*Contextual Styles*/
+#container pre {
+  font-size: 120%; /*Bump up the font size for the ASCII art*/
+  margin-bottom: 0em;
+}
+div#container h2 {
+  margin-top: 6em;
+  color: #FFFFFF;
+}
+
+/*Fancy-Pants Styles*/
+h2:before { content: "/* "; } /*IE Won't do this, but compliant browsers will render C-style comments around h2.*/
+h2:after { content: "  */"; } /*Again, IE Won't do this. Not even version 7.*/
+
+ul#lofi-acronym li:first-letter {
+  color: white;
+  font-size: 2em;
+  line-height: .5;
+  padding-right: .1em;
+}
+
+/*Accordion Properties*/
+dl { border-bottom: 1px dashed #00FF00; }
+dt {
+  padding: .5em 0em .5em 1em;
+  border-top: 1px dashed #00FF00;
+  cursor: pointer; 
+}
+dt:hover {
+  color: #FFFFFF; /*Fails in IE6, which only accepts the :hover pseudo-class on the a selector*/
+}
+dt.accActive {
+  color: #FFFFFF;
+}
+dd a { color: #3333CC; text-decoration: none; }
+#container dd {
+  color: black;
+  background-color: white;
+}
+dd div { 
+  padding: 3em 1em 3em 1em;
+  background-image: url(gfx/shadow-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center top; /*Center the shadow, no matter the width of the screen*/
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+dd blockquote {
+  font-family: Georgia, "Times New Roman", Roman, serif;
+  font-size: 125%;
+  font-weight: bold;
+  width: 17em;
+  padding: 1em;
+  margin-top: .4em;
+  margin-right: 1em;
+  margin-bottom: 0em;
+  float: left;
+  color: #003399;
+  background-image: url(gfx/quote-top.jpg); /*Top background image for quotes...*/
+  background-repeat: no-repeat;
+  background-position: top left;
+  }
+dd blockquote p {
+  background-image: url(gfx/quote-bottom.jpg); /*Bottom background image for quotes...*/
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  }
+dd > div > p + p { text-indent: 2em; margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers*/
+blockquote cite { 
+  margin-top: .5em;
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+}
+blockquote em { font-weight: bold; }
+blockquote cite.article { font-style: normal; } /*Don't italicize article names*/
+blockquote cite span {
+  font-style: normal; /*Keep author names from being italicized, either*/
+  font-variant: small-caps; /*Small caps, just for a little visual touch*/
+}
+#container ul.references li {
+  font-size: 90%; /*Reduce the references size*/
+  text-indent: -2em; /*Negative text indent with equal, positive padding creates a "hanging" indent effect*/
+  padding-left: 2em;
+  margin: 0em 0em 1em 0em;
+}
+ul.references cite { font-style: italic; }
+

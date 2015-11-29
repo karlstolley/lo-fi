@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Lo-Fi Manifesto</title>
+<script type="text/javascript" src="mootools.js"></script>
+<style type="text/css" media="print">
+dd { height: auto !important; }
+</style>
+<style type="text/css" media="screen">
+<!--
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset, img { border:0; }
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol, ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+q:before, q:after { content:''; }
+abbr, acronym { border:0; }
+body {
+  background: black url(crt-texture.gif);
+  background-attachment: fixed;
+  color: #00FF00;
+  font-size: small;
+  font-family: "Courier New", Courier, mono;
+}
+#container {
+  position: relative;
+  margin: 0px auto 0px auto;
+  padding: 1em;
+  width: 49.5em;
+}
+#container > * { margin-bottom: 2em; }
+p, dd, ul { line-height: 1.7; }
+ol {
+  list-style-type: decimal;
+  margin-left: 2em;
+}
+ol li { margin-bottom: 1em; }
+li { margin-bottom: 2em; }
+.lo-fi { color: white; }
+acronym {
+  border-bottom: 1px dotted;
+  cursor: default;
+}
+h1, .skip {
+  position: absolute;
+  left: -1000px;
+}
+#container pre {
+  font-size: 120%; /*Must be corrected for IE*/
+  margin-bottom: 0em;
+}
+div#container > h2 {
+  margin-top: 3em;
+  color: #FFFFFF;
+}
+h2:before { content: "/* "; }
+h2:after { content: "  */"; }
+strong { font-weight: bold; }
+ul#lofi-acronym li:first-letter {
+  color: white;
+  font-size: 2em;
+  line-height: .5;
+  padding-right: .1em;
+}
+/*Accordion Properties*/
+dl { border-bottom: 1px dashed #00FF00; }
+dt {
+  padding: .5em 0em .5em 1em;
+  border-top: 1px dashed #00FF00;
+}
+#container dd {
+  color: white;
+  background-color: black;
+  background-image: url(glow-bottom.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+dd > * { padding: 0em 1em 1em 1em; }
+dd > *:first-child {
+  padding-top: 1em;
+  background-image: url(glow-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+dt:hover {
+  color: #FFFFFF;
+  /*background-color: #00FF00;*/
+  /*border-top: 1px solid #00FF00;*/
+  cursor: pointer;
+}
+dt.accActive {
+  color: #FFFFFF;
+  /*background-color: #00FF00;*/
+  /*border-top: 1px dashed #00FF00;*/
+  border-bottom: 1px dashed #00FF00;
+}
+-->
+</style>
+<script type="text/javascript">
+window.addEvent('domready', function(){
+var accordion = new Accordion('dt.atStart', 'dd.atStart', {
+	alwaysHide: true,
+	opacity: false,
+	display: false,
+	onActive: function(toggler, element){
+		toggler.addClass('accActive');
+	},
+ 	onBackground: function(toggler, element){
+		toggler.removeClass('accActive');
+	}
+}, $('manifesto-points'));
+});
+
+</script>
+</head>
+<body>
+<div id="container">
+  <h1>The L0-FI Manifesto</h1>
+  <p class="skip">ASCII art appears below. Skip to main content.</p>
+  <pre title="The LO-FI Manifesto"><!--This is a perversion of XHTML and CSS. Don't do this. Ever.-->          __    __
+         / /_  / /_    ___ <span class="lo-fi"> __     ____            ______  ____</span>
+        / __/ / __ \  / _ \<span class="lo-fi">/ /    / __ \          / ____/ /  _/</span>
+       / /_  / / / / /  __<span class="lo-fi">/ /    / / / / ______  / /_     / /</span>
+       \__/ /_/ /_/_ \___<span class="lo-fi">/ /___ / /_/ / /_____/ / __/   _/ /</span>  __
+            /  |/  / ___<span class="lo-fi">/_____/</span>_<span class="lo-fi">\____</span>(_) / __/ <span class="lo-fi">/_/</span>    _<span class="lo-fi">/___/</span> / /_  ____
+           / /|_/ / / __ `/ / __ \  / / / /_  / _ \  / ___/ / __/ / __ \
+          / /  / / / /_/ / / / / / / / / __/ /  __/ (__  ) / /_  / /_/ /
+         /_/  /_/  \__,_/ /_/ /_/ /_/ /_/    \___/ /____/  \__/  \____/
+
+              
+               + - + - + - + - +   + - + - + - + - + - + - + - + 
+               | K | A | R | L |   | S | T | O | L | L | E | Y |
+               + - + - + - + - +   + - + - + - + - + - + - + - +
+</pre>
+  <h2>Preamble</h2>
+  <p>The time has come to reject expensive consumer and prosumer software that
+    limits the extensibility of digital discourse and binds digital production
+    skills to programs that are destined for disruptive upgrades or obsolescence.</p>
+  <p>The digital discourse that we, in the loosely-defined fields of rhetoric
+    and composition, computers and writing, and technical communication, ought
+    to be producing should be software- and device-independent.</p>
+  <p>Futhermore, the skills and language we develop through digital production
+    should also enable us to speak confidently and authoritatively with one another,
+    regardless of who can afford or install what at their home institution or
+    on their personal machine.</p>
+  <p>(In other words, describing a sequence of points and clicks over a series
+    of menus while attempting to account for different versions of the same piece
+    of software is no way to have informed production-oriented conversations
+    of any depth.)</p>
+  <p>And as teachers, we should actively seek to provide students with sustainable,
+    extensible digital production abilities through open, rhetorically grounded
+    digital practices. Neither Flash nor Word nor Dreamweaver is consistent with
+    that goal.</p>
+  <h2>Defining Lo-fi Technologies</h2>
+  <p>Lo-fi technologies are simple, free, and consist of and/or can retrograde
+    to:</p>
+  <ol>
+    <li>Plain text files (.txt, .xml, .htm, .css, .js, .php, etc.)</li>
+    <li>Plain text editors (Notepad, TextEdit, pico/nano, vi, etc.)</li>
+    <li>Languages expressed in plain text (XML, XHTML, CSS, JavaScript, PHP,
+      etc.)</li>
+  </ol>
+  <p>Yet despite their humble origins, lo-fi technologies can indeed provide
+    user experiences that are decidedly hi-fi, like <acronym title="Asychronous JavaScript and XML">AJAX</acronym> (whose
+    most famous application may be Google's Gmail service).</p>
+  <h2>Lo-fi is <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym></h2>
+  <p>Although “lo-fi” describes a preferred class of technologies for digital
+    producers to use, as an acronym, <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym> outlines
+    four principles that are crucial to the future of digital discourse:</p>
+  <ul id="lofi-acronym">
+    <li><strong>Lossless</strong>: Discourse presented through lo-fi production
+      technologies neither degrades nor becomes trapped in the production itself.
+      Text migrates and transforms from a single source (e.g., XML or an application
+      of XML); images, video, and other media elements maintain their integrity
+      as individual files.</li>
+    <li><strong>Open</strong>: Lo-fi artifacts’ source code and media elements
+      are available for inspection, revision, and extension outside the scope
+      of any one piece of production software, and any one producer. Openness
+      includes, by default, end-user/reader customization and repurposing.</li>
+    <li><strong>Flexible</strong>: Content presented using lo-fi production technologies
+      can be experienced unobstrusively in different ways by different users
+      equipped with different devices.</li>
+    <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct
+      orchestration (like a recipe), not composition (like a TV dinner), allowing
+      users’ devices to interpret and perhaps repurpose the digital artifact.</li>
+  </ul>
+  <h2>Manifesto</h2>
+  <dl id="manifesto-points">
+    <!--JavaScript should really loop through and add the toggler/element and atStart classes-->
+    <dt class="toggler atStart">Software is a poor organizing principle for digital
+      production.</dt>
+    <dd class="element atStart">
+      <p>Limits discussion on economic/access lines, ties content to specific
+        software, limits the reach of digital discourse, creates unnecessary
+        problems of sustainability and extensibility. Anecdote: the acquisition
+        of Macromedia by Adobe. <p>Maeda quote: </p></p>
+    </dd>
+    <dt class="toggler atStart">Digital literacy is too important to be entrusted
+      to software.</dt>
+    <dd class="element atStart">
+      <p>Need for students to be able to flexibly and quickly adapt to different
+        digital communication tasks and environments; can't afford to have to
+        start from scratch or waste time on learning software skills that are
+        not transferable/applicable outside of a limited scope. Students have
+        to learn how to adapt, and receive literacy skills that make them adaptable.</p>
+    </dd>
+    <dt class="toggler atStart">Content should never be trapped by technology.</dt>
+    <dd class="element atStart">
+      <p>Most software (PPT, Word, Acrobat, etc.) creates "roach motels" for
+        content and information. Single-sourcing with XML technologies is the
+        singular way to present content; single-media files for image, sound,
+        and video should remain separate and be linked or otherwise referenced
+        outside of a File &gt; Import scheme.</p>
+    </dd>
+    <dt class="toggler atStart">Code is just as important as content.</dt>
+    <dd class="element atStart">
+      <p>Well, it is. Especially with lo-fi technologies. In lo-fi, we rely on
+        human-editable code, rather than corporate secrets, to make communication
+        happen. Therefore, the code is just as important as the content; it's
+        basically impossible to have one without the other.</p>
+    </dd>
+    <dt class="toggler atStart">Learn and use Internet media and primitive data
+      types.</dt>
+    <dd class="element atStart">
+      <p>MIME types, primitive data types are the building blocks of all languages,
+        from XML (sort of) to MySQL.</p>
+    </dd>
+    <dt class="toggler atStart">Acts of digital production should contribute
+      to a deeper literacy.</dt>
+    <dd class="element atStart">
+      <p>That is, digital production has as its end more than the production
+        of an artifact; rather, digital production should broaden one's coneptions
+        of digital communication and technology, and prepare one for increasingly
+        sophisticated/advanced methods and technologies of production.</p>
+    </dd>
+    <dt class="toggler atStart">To produce and not teach is selfish; to teach
+      and not produce is negligent.</dt>
+    <dd class="element atStart">
+      <p>Harsh truths require harsh words. One of the great things about working
+        with lo-fi technologies like languages is that there is a vast discourse
+        community, spanning many disciplines, fields, and professions, whose
+        members are all tackling similar production problems. And because these
+        communities are working with languages, tapping into the community is
+        as simple as typing a tag, a language construct, or an error message
+        into a search engine.</p>
+    </dd>
+    <dt class="toggler atStart">Respect and forgive (and perhaps educate) the end user.</dt>
+    <dd class="element atStart"><p>The good will of a digital audience is soon lost when their first encounter with a piece of digital discourse is a series of messages to install or upgrade software and plugins or, worse still, that their equipment (and perhaps by extension, financial status, physical ability) is inadequate and beyond your toleration.</p></dd>
+    <dt class="toggler atStart">If a hi-fi solution is necessary, keep it dynamic
+      and unobtrusive.</dt>
+    <dd class="element atStart"><p>Dynamic and openly available lo-fi data sources can often justify any production choice, including hi-fi ones. Progressively enhance to gracefully degrade.</p></dd>
+        <dt class="toggler atStart">Insist on open standards and formats.</dt>
+    <dd class="element atStart"><p>It's a travesty that their are not yet open standards for sound or video. Ogg Theora and Ogg Vorbis are both promising, and deserve support. Other standards are openly available from W3C, ECMA, ISO, IANA, and others. Provide a list of common ones, plus links to human-friendly/non-engineer versions of them.</p></dd></dd>
+  </dl>
+</div>
+</body>
+</html>

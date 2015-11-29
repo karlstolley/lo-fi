@@ -1,0 +1,35 @@
+/* Print Styles */
+.skip { display: none; } /*Hide accessibility stuff, which is unnecessary in print.*/
+dd { height: auto !important; overflow: visible !important;} /*Override inline styles that Mootools puts in.*/
+dt { font-weight: bold !important; } /*Make the manifesto points bold*/
+a { text-decoration: none; color: black; } /*Make links black and not underlined, like any other text*/
+/*Print out the URLs after the links; target those in the manifesto points only (as the only links outside of the manifesto points are in the references list, and those are already visible on the page. For more on this technique, see http://www.alistapart.com/stories/goingtoprint/ */
+dl a:link:after, dl a:visited:after {
+  content: " [" attr(href) "] "; /*Link will be printed in brackets*/
+  font-size: 90%; /*Print slightly smaller; these things can be long*/
+  }
+acronym { border-bottom: 0px; } /*No bottom border on acronym*/
+/*Print the expanded acronym, and put the actual acronym in parentheses*/
+acronym:before { content: attr(title) " ("; }
+/*Close the parentheses behind the acronym*/
+acronym:after {content: ") "; }
+/*Use blockquote styles from the screen*/
+blockquote cite { 
+  display: block; /*Cite is usually an inline tag (like bold); this forces it to display as a block-level tag, like a heading--moving it to its own line*/
+  font-style: italic; /*Italicize the text in cite, which will be the title of the work*/
+  font-weight: normal; /*Because text in the blockquote was bolded above, cite is unbolded by making it "normal")*/
+}
+blockquote em { font-weight: bold; } /*Bold emphasis, in addition to italicizing it. It looks good, don't worry*/
+blockquote cite.article { font-style: normal; } /*However, don't italicize article names, following APA style*/
+blockquote cite span {
+  font-style: normal; /*Keep author names from being italicized, either*/
+  font-variant: small-caps; /*Small caps, just for a little visual touch*/
+}
+/*Style the references list appropriately*/
+ul.references li {
+  list-style-type: none; /*No bullet points*/
+  padding-left: .5in; /*Padding to bump the whole entry in*/
+  text-indent: -.5in; /*Negative text-indent for the hanging first line*/
+}
+ul.references + h2 { display: none; }
+ul.references + h2 + p { display: none; }

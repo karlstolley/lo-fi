@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Lo-Fi Manifesto</title>
+<script type="text/javascript" src="mootools.js"></script>
+<style type="text/css" media="screen">
+<!--
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
+<!--
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img {
+	border:0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol, ul {
+	list-style:none;
+}
+caption, th {
+	text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before, q:after {
+	content:'';
+}
+abbr, acronym {
+	border:0;
+}
+body {
+	background: black url(crt-texture.gif);
+	color: #00FF00;
+	font-size: small;
+	font-family: "Courier New", Courier, mono;
+}
+#container {
+	position: relative;
+	margin: 0px auto 0px auto;
+	padding: 1em;
+	width: 49.5em;
+}
+#container > * {
+	margin-bottom: 2em;
+}
+p, dd, ul {
+	line-height: 1.7;
+}
+li {
+	margin-bottom: 2em;
+}
+.lo-fi {
+	color: white;
+}
+h1, .skip {
+	position: absolute;
+	left: -1000px;
+}
+#container pre {
+	font-size: 120%; /*Must be corrected for IE*/
+	margin-bottom: 0em;
+}
+div#container > h2 {
+	margin-top: 3em;
+	color: #FFFFFF;
+}
+h2:before {
+	content: "/* ";
+}
+h2:after {
+	content: "  */";
+}
+strong {
+	font-weight: bold;
+}
+ul#lofi-acronym li:first-letter {
+	color: white;
+	font-size: 2em;
+	line-height: .5;
+}
+/*Accordion Properties*/
+dl {
+	border-bottom: 1px dashed #00FF00;
+}
+dt {
+	padding: .5em 0em .5em 1em;
+	border-top: 1px dashed #00FF00;
+}
+#container dd {
+	color: black;
+	background-color: white;
+}
+dd > * {
+	padding: 0em 1em 1em 1em;
+}
+dd > *:first-child {
+	padding-top: 1em;
+}
+dt:hover {
+	color: #000000;
+	background-color: #00FF00;
+	border-top: 1px solid #00FF00;
+	cursor: pointer;
+}
+dt.accActive {
+	color: #000000;
+	background-color: #00FF00;
+	border-top: 1px solid #00FF00;
+ border-style:
+}
+-->
+</style>
+<script type="text/javascript">
+window.addEvent('domready', function(){
+var accordion = new Accordion('dt.atStart', 'dd.atStart', {
+	alwaysHide: true,
+	opacity: false,
+	display: false,
+	onActive: function(toggler, element){
+		toggler.addClass('accActive');
+	},
+ 	onBackground: function(toggler, element){
+		toggler.removeClass('accActive');
+	}
+}, $('manifesto-points'));
+});
+</script>
+</head>
+<body>
+<div id="container">
+  <h1>The L0-FI Manifesto</h1>
+  <p class="skip">ASCII art appears below. Skip to main content.</p>
+  <pre title="The LO-FI Manifesto">
+          __    __
+         / /_  / /_    ___ <span class="lo-fi"> __     ____            ______  ____</span>
+        / __/ / __ \  / _ \<span class="lo-fi">/ /    / __ \          / ____/ /  _/</span>
+       / /_  / / / / /  __<span class="lo-fi">/ /    / / / / ______  / /_     / /</span>
+       \__/ /_/ /_/_ \___<span class="lo-fi">/ /___ / /_/ / /_____/ / __/   _/ /</span>  __
+            /  |/  / ___<span class="lo-fi">/_____/</span>_<span class="lo-fi">\____</span>(_) / __/ <span class="lo-fi">/_/</span>    _<span class="lo-fi">/___/</span> / /_  ____
+           / /|_/ / / __ `/ / __ \  / / / /_  / _ \  / ___/ / __/ / __ \
+          / /  / / / /_/ / / / / / / / / __/ /  __/ (__  ) / /_  / /_/ /
+         /_/  /_/  \__,_/ /_/ /_/ /_/ /_/    \___/ /____/  \__/  \____/
+
+              
+               + - + - + - + - +   + - + - + - + - + - + - + - + 
+               | K | A | R | L |   | S | T | O | L | L | E | Y |
+               + - + - + - + - +   + - + - + - + - + - + - + - +
+</pre>
+  <h2>Preamble</h2>
+  <!--iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+  <p>The days of designing webpages to be mere webpages have ended. So have the
+    days of using WYSIWYG editors, which clutter the structure of a document
+    with a web writer’s visual choices.</p>
+  <p>But a casual observer of our field would never know this, given that writing
+    for the Web is often taught like it’s 1998.</p>
+  <p>Web production now stands on the threshold of a new era, the era of the
+    “semantic Web” (which will soon be so synonymous with digital discourse as
+    to be a redundant term).</p>
+  <p>This is an era of XML and structural documents, an era of increasingly diverse
+    and ubiquitous web access that goes far beyond the familiar portal of the
+    desktop browser (which is what one purportedly “sees” in a WYSIWYG editor).</p>
+  <p>This is an era when devices will need to be able to interpret and manipulate
+    web-available discourse as much as, if not more than, humans.</p>
+  <p>This is an era when the lo-fi technology of plain text and the text editor,
+    combined with fluent literacy in the languages supporting digital discourse,
+    must supplant ineffective hi-fi technologies like the WYSIWYG editor, in
+    both its desktop (Dreamweaver) and web-based forms (Blogger.com).</p>
+  <h2>Definining L.O.-F.I.</h2>
+  <ul id="lofi-acronym">
+    <li><strong>Lossless</strong>: Discourse presented through lo-fi production
+      technologies neither degrades nor becomes trapped in the production itself.
+      Text migrates and transforms from a single source; images, video, and other
+      media maintain their integrity as individual files.</li>
+    <li><strong>Open</strong>: Lo-fi production technologies make their source
+      code and materials available for inspection, revision, and extension outside
+      of the scope of any one piece of production software. This includes, by
+      default, end-user/reader customization and repurposing.</li>
+    <li><strong>Flexible</strong>: Content presented using lo-fi production technologies
+      can be experienced unobstrusively in different ways by different users.</li>
+    <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct
+      orchestration (like a recipe), not composition (like a TV dinner), allowing
+      users’ devices to interpret the production, sort of the way a chef interprets
+      a recipe.</li>
+  </ul>
+  <h2>Manifesto</h2>
+  <dl id="manifesto-points">
+    <dt class="toggler atStart">01. All lo-fi productions can be edited from
+      a simple text editor.</dt>
+    <dd class="element atStart">
+      <p>Embrace the simplicity and austerity of the text editor. No buttons,
+        just content. And code.</p>
+    </dd>
+    <dt class="toggler atStart">02. Code is just as important as content.</dt>
+    <dd class="element atStart">
+      <p>Sorry, there’s just no getting around this. Code matters. It makes digital
+        communication possible, and will be absolutely essential to successful
+        digital discourse in the semantic web.</p>
+    </dd>
+    <dt class="toggler atStart">03. Without meaningful structure, digital discourse
+      is useless.</dt>
+    <dd class="element atStart">
+      <p>Any digital writing without at least a touch of XML is already obsolete.</p>
+    </dd>
+    <dt class="toggler atStart">04. There is no greater digital transgression
+      than File &gt; Import.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">05. Trust the user at run-time.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">06. Incompatibility results solely from a lack
+      of foresight.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">07. Accessibility is neither an afterthought
+      nor a clean-up job.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">08. Neither require nor demand anything of any
+      user.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">09. Remember the URL and keep it holy.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">10. Incompatibility results solely from a lack
+      of foresight.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">11. Any digital move not towards XML is a move
+      in the wrong direction.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">12. Create once, then deploy and test everywhere.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">13. Source code should never grossly outweigh
+      content.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">14. Users should wonder, not fear, what they
+      may be missing.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">15. Your computer equipment does not matter.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+    <dt class="toggler atStart">16. Incompatibility results solely from a lack
+      of foresight.</dt>
+    <dd class="element atStart">
+      <p>Plain text rocks.</p>
+    </dd>
+  </dl>
+</div>
+</body>
+</html>

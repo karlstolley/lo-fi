@@ -1,0 +1,5 @@
+/* Print Styles */
+.skip { display: none; } /*Hide accessibility stuff, which is unnecessary in print.*/
+dd { height: auto !important; overflow: visible !important;} /*Override inline styles that Mootools puts in.*/
+
+
