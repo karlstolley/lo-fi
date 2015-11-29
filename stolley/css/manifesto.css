@@ -4,7 +4,7 @@ Begin with Yahoo! Reset-min CSS
 (See http://developer.yahoo.com/yui/reset/)
 
  */
- 
+
 /*
 Copyright (c) 2007, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
@@ -49,7 +49,7 @@ Manifesto Styles
 
 /*Basic Body Features*/
 body {
-  background: black url(crt-texture-dark.gif);
+  background: black url(gfx/crt-texture-dark.gif);
   background-attachment: fixed; /*Fixed keeps the background from flickering*/
   color: #00FF00;
   font-size: small; /*Font keywords allow text scaling in all browsers, even IE*/
@@ -113,7 +113,7 @@ dl { border-bottom: 1px dashed #00FF00; }
 dt {
   padding: .5em 0em .5em 1em;
   border-top: 1px dashed #00FF00;
-  cursor: pointer; 
+  cursor: pointer;
 }
 dt:hover {
   color: #FFFFFF; /*Fails in IE6, which only accepts the :hover pseudo-class on the a selector*/
@@ -126,9 +126,9 @@ dd a { color: #3333CC; text-decoration: none; }
   color: black;
   background-color: white;
 }
-dd div { 
+dd div {
   padding: 3em 1em 3em 1em;
-  background-image: url(shadow-top.jpg);
+  background-image: url(gfx/shadow-top.jpg);
   background-repeat: no-repeat;
   background-position: center top; /*Center the shadow, no matter the width of the screen*/
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -145,19 +145,19 @@ dd blockquote {
   margin-bottom: 0em;
   float: left;
   color: #003399;
-  background-image: url(quote-top.jpg); /*Top background image for quotes...*/
+  background-image: url(gfx/quote-top.jpg); /*Top background image for quotes...*/
   background-repeat: no-repeat;
   background-position: top left;
   }
 dd blockquote p {
-  background-image: url(quote-bottom.jpg); /*Bottom background image for quotes...*/
+  background-image: url(gfx/quote-bottom.jpg); /*Bottom background image for quotes...*/
   background-repeat: no-repeat;
   background-position: bottom right;
   padding-bottom: 1em;
   padding-right: 1em;
   }
 dd > div > p + p { text-indent: 2em; margin-top: 1em; } /*Add some nice indentation after the first paragraph, for compliant browsers*/
-blockquote cite { 
+blockquote cite {
   margin-top: .5em;
   display: block;
   font-style: italic;
