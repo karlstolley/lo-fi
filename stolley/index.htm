@@ -12,59 +12,115 @@ Code licensed under the BSD License:
 http://developer.yahoo.net/yui/license.txt
 version: 2.2.2
 */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;}
-
-body { background: black url(crt-texture.gif); color: #00FF00; font-size: small; font-family: "Courier New", Courier, mono; }
-
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset, img {
+	border:0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol, ul {
+	list-style:none;
+}
+caption, th {
+	text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before, q:after {
+	content:'';
+}
+abbr, acronym {
+	border:0;
+}
+body {
+	background: black url(crt-texture.gif);
+	color: #00FF00;
+	font-size: small;
+	font-family: "Courier New", Courier, mono;
+}
 #container {
-  position: relative;
-  margin: 0px auto 0px auto;
-  padding: 1em; 
-  width: 49.5em;
-  }
-#container > * { margin-bottom: 1em; }
-p, dd, ul { line-height: 1.7; }
-li { margin-bottom: 1em; }
-
-.lo-fi { color: white; }
-h1, .skip { position: absolute; left: -1000px; }
-#container pre { 
-  font-size: 120%; /*Must be corrected for IE*/
-  margin-bottom: 0em;
+	position: relative;
+	margin: 0px auto 0px auto;
+	padding: 1em;
+	width: 49.5em;
 }
-h2 { margin-top: 3em; }
-h2:before { content: "/* "; }
-h2:after { content: "  */"; }
-strong { font-weight: bold;  }
-ul#lofi-acronym li:first-letter { color: red; }
+#container > * {
+	margin-bottom: 1em;
+}
+p, dd, ul {
+	line-height: 1.7;
+}
+li {
+	margin-bottom: 1em;
+}
+.lo-fi {
+	color: white;
+}
+h1, .skip {
+	position: absolute;
+	left: -1000px;
+}
+#container pre {
+	font-size: 120%; /*Must be corrected for IE*/
+	margin-bottom: 0em;
+}
+h2 {
+	margin-top: 3em;
+}
+h2:before {
+	content: "/* ";
+}
+h2:after {
+	content: "  */";
+}
+strong {
+	font-weight: bold;
+}
+ul#lofi-acronym li:first-letter {
+	color: red;
+}
 /*Accordion Properties*/
-dl { border-bottom: 1px dashed #00FF00; }
+dl {
+	border-bottom: 1px dashed #00FF00;
+}
 dt {
-  padding: .5em 0em .5em 1em;
-  border-top: 1px dashed #00FF00;
+	padding: .5em 0em .5em 1em;
+	border-top: 1px dashed #00FF00;
 }
-#container dd { color: black; background-color: white; }
-dd > * { padding: 0em 1em 1em 1em; }
-dd > *:first-child { padding-top: 1em; }
+#container dd {
+	color: black;
+	background-color: white;
+}
+dd > * {
+	padding: 0em 1em 1em 1em;
+}
+dd > *:first-child {
+	padding-top: 1em;
+}
 dt:hover {
-  color: #000000;
-  background-color: #00FF00;
-  border-top: 1px solid #00FF00;
-  cursor: pointer;
+	color: #000000;
+	background-color: #00FF00;
+	border-top: 1px solid #00FF00;
+	cursor: pointer;
 }
-dt.accActive { 
-  color: #000000;
-  background-color: #00FF00;
-  border-top: 1px solid #00FF00;
-  border-style: 
-  }
-
+dt.accActive {
+	color: #000000;
+	background-color: #00FF00;
+	border-top: 1px solid #00FF00;
+ border-style:
+}
 -->
-
-
-
-
-
 </style>
 <script type="text/javascript">
 window.addEvent('domready', function(){
@@ -104,14 +160,50 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
 </pre>
   <h2>Preamble</h2>
   <!--iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
-  <p>Web production is too important to be left in the hands of software, regardless of whether the software is proprietary or open source.
+  <p>The days of designing webpages to be webpages have ended. So have the days
+    of using WYSIWYG editors, which misguidedly incorporate web authors’ visual
+    choices, making them a part of the structural code (XHTML) or HTML.</p>
+  <p>But a casual observer of our field would never know this, given that writing
+    for the Web is often taught like it’s 1998.</p>
+  <p>Web production now stands on the threshold of a new era, the era of the
+    semantic Web (which will soon be so synonymous with digital discourse as
+    to be a redundant term). This is an era of XML and structural documents,
+    an era of increasingly diverse and ubiquitous web access that goes far beyond
+    the familiar portal of the desktop browser (which is what one purportedly
+    “sees” in a WYSIWYG editor). This is an era when devices will need to be
+    able to interpret webpages and web-available discourse as much as, if not
+    more than, humans.</p>
+  <p>How will we, in the loosely defined fields of rhetoric and composition,
+    computers and writing, and technical communication, prepare our discourse–and
+    teach our students–to participate and even shape the direction of digital
+    discourse?</p>
+  <p>We will not rely on software. Dreamweaver will not save us, nor Frontpage.
+    Nor will Drupal, nor any other piece of software–open-source or otherwise–so
+    long as that software protects us from the deeper levels of a document’s
+    structural meaning (and the interdependent levels of visual presentation
+    across a variety of devices and media), and so long as software insists on
+    making visual choices (“what you <em>see</em>”) the primary mode of web development.
+    No, this software will not save us–in fact, it will only harm the progress
+    and improvement, the flexibility and sustainability of web-available discourse.</p>
   <h2>Definitions</h2>
   <h2>L.O.-F.I.</h2>
   <ul id="lofi-acronym">
-  <li><strong>Lossless</strong>: Discourse presented through lo-fi production technologies neither degrades nor becomes trapped in the production itself. Text migrates and transforms; images, video, and other media maintain their integrity.</li>
-  <li><strong>Open</strong>: Lo-fi production technologies make their source code and materials available for inspection, revision, and extension outside of the scope of any one piece of production software. Aside from single-media files for image, video, and sound, </li>
-  <li><strong>Flexible</strong>: Content presented using lo-fi production technologies can be experienced unobstrusively in different ways by different users.</li>
-  <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct orchestration (a recipe), not composition (a TV dinner), allowing users’ devices to interpret the production the way a chef interprets a recipe</li>
+    <li><strong>Lossless</strong>: Discourse presented through lo-fi production
+      technologies neither degrades nor becomes trapped in the production itself.
+      Text migrates and transforms from a single source; images, video, and other
+      media maintain their integrity as individual files.</li>
+    <li><strong>Open</strong>: Lo-fi production technologies make their source
+      code and materials available for inspection, revision, and extension outside
+      of the scope of any one piece of production software. This includes, by
+      default, end-user/reader customization and repurposing. Aside from single-media
+      files for image, video, and sound, everything about a digital artifact:
+      its structure, its visual presentation, and any interactive elements, including
+      motion, should be described in source code.</li>
+    <li><strong>Flexible</strong>: Content presented using lo-fi production technologies
+      can be experienced unobstrusively in different ways by different users.</li>
+    <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct
+      orchestration (a recipe), not composition (a TV dinner), allowing users’
+      devices to interpret the production the way a chef interprets a recipe</li>
   </ul>
   <h2>Manifesto</h2>
   <dl id="manifesto-points">
