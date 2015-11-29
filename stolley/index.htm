@@ -3,188 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>The Lo-Fi Manifesto</title>
+<!--Load stylesheets-->
+<link rel="stylesheet" href="manifesto.css" media="screen" />
+<link rel="stylesheet" href="print.css" media="print" />
+<!--Fix some CSS things for IE-->
+<!--[if IE]><link rel="stylesheet" href="ie.css" media="all" /><![endif]-->
+<!--Load the Mootools library elements-->
 <script type="text/javascript" src="mootools.js"></script>
-<style type="text/css" media="print">
-dd { height: auto !important; }
-</style>
-<style type="text/css" media="screen">
-<!--
-/*
-Copyright (c) 2007, Yahoo! Inc. All rights reserved.
-Code licensed under the BSD License:
-http://developer.yahoo.net/yui/license.txt
-version: 2.2.2
-*/
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
-  margin:0;
-  padding:0;
-}
-table {
-  border-collapse:collapse;
-  border-spacing:0;
-}
-fieldset, img { border:0; }
-address, caption, cite, code, dfn, em, strong, th, var {
-  font-style:normal;
-  font-weight:normal;
-}
-ol, ul { list-style:none; }
-caption, th { text-align:left; }
-h1, h2, h3, h4, h5, h6 {
-  font-size:100%;
-  font-weight:normal;
-}
-em { font-style: italic; }
-a { color: #CCCCCC; text-decoration: none; }
-a:hover { text-decoration: underline; }
-q:before, q:after { content:''; }
-abbr, acronym { border:0; }
-body {
-  background: black url(crt-texture.gif);
-  background-attachment: fixed;
-  color: #00FF00;
-  font-size: small;
-  font-family: "Courier New", Courier, mono;
-}
-#container {
-  position: relative;
-  margin: 0px auto 0px auto;
-  padding: 1em;
-  width: 49.5em;
-}
-#container > * { margin-bottom: 2em; }
-p, dd, ul { line-height: 1.7; }
-ol {
-  list-style-type: decimal;
-  margin-left: 2em;
-}
-ol li { margin-bottom: 1em; }
-li { margin-bottom: 2em; }
-.lo-fi { color: white; }
-acronym {
-  border-bottom: 1px dotted;
-  cursor: default;
-}
-h1, .skip {
-  position: absolute;
-  left: -1000px;
-}
-#container pre {
-  font-size: 120%; /*Must be corrected for IE*/
-  margin-bottom: 0em;
-}
-div#container > h2 {
-  margin-top: 3em;
-  color: #FFFFFF;
-}
-h2:before { content: "/* "; }
-h2:after { content: "  */"; }
-strong { font-weight: bold; }
-ul#lofi-acronym li:first-letter {
-  color: white;
-  font-size: 2em;
-  line-height: .5;
-  padding-right: .1em;
-}
-/*Accordion Properties*/
-dl { border-bottom: 1px dashed #00FF00; }
-dt {
-  padding: .5em 0em .5em 1em;
-  border-top: 1px dashed #00FF00;
-}
-#container dd {
-  color: white;
-  background-color: black;
-  background-image: url(glow-bottom.jpg);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-dd > div { 
-  padding: 2em 1em 2em 1em;
-  background-image: url(glow-top.jpg);
-  background-repeat: no-repeat;
-  background-position: center top;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-dt:hover {
-  color: #FFFFFF;
-  /*background-color: #00FF00;*/
-  /*border-top: 1px solid #00FF00;*/
-  cursor: pointer;
-}
-dt.accActive {
-  color: #FFFFFF;
-  /*background-color: #00FF00;*/
-  /*border-top: 1px dashed #00FF00;*/
-  border-bottom: 1px dashed #00FF00;
-}
-dd blockquote {
-  font-family: Georgia, "Times New Roman", Roman, serif;
-  font-size: 125%;
-  width: 17em;
-  padding: 1em;
-  margin-top: .4em;
-  margin-right: 1em;
-  margin-bottom: 0em;
-  float: left;
-  background-color: #550000;
-  }
-dd > div > p + p { text-indent: 2em; margin-top: 1em; }
-blockquote cite { 
-  margin-top: .5em;
-  display: block;
-  font-style: italic;
-}
-blockquote cite.article { font-style: normal; }
-blockquote cite span {
-  font-style: normal;
-  font-variant: small-caps;
-}
--->
-</style>
-<!--[if IE]> 
-<style type="text/css" media="screen">
-#container pre {
-  font-size: 100%;
-}
-</style>
-<![endif]-->
-<script type="text/javascript">
-//set up the classes the accordion extension needs
-window.addEvent('domready', function() {
-var myDefTerms = $ES('dt','manifesto-points');
-var myDefDefs = $ES('dd','manifesto-points');
-for (i=0;i<myDefTerms.length;i++)
-{
-  myDefTerms.addClass('toggler atStart');
- }
-for (i=0;i<myDefDefs.length;i++)
-{
-  myDefDefs.addClass('element atStart');
- }
-});
-//run the accordion on manifesto-points
-window.addEvent('domready', function(){
-var accordion = new Accordion('dt.atStart', 'dd.atStart', {
-	alwaysHide: true,
-	opacity: false,
-	duration: 1000,
-	onActive: function(toggler, element){
-		toggler.addClass('accActive');
-	},
- 	onBackground: function(toggler, element){
-		toggler.removeClass('accActive');
-	}
-}, $('manifesto-points'));
-});
-
-</script>
+<!--Load the site-specific javascript-->
+<script type="text/javascript" src="site.js"></script>
 </head>
 <body>
 <div id="container">
   <h1>The L0-FI Manifesto</h1>
-  <p class="skip">ASCII art appears below. Skip to main content.</p>
-  <pre title="The LO-FI Manifesto"><!--This is a perversion of XHTML and CSS. Don't do this. Ever.-->          __    __
+  <!--Keep screen readers from suffering through the ASCII art with a skip link-->
+  <p class="skip">ASCII art appears below. <a href="#preamble">Skip to main content</a>.</p>
+  <!--The span tags on the ASCII art is a perversion of XHTML and CSS. Don't do this. Ever.-->
+  <pre title="The LO-FI Manifesto">          __    __
          / /_  / /_    ___ <span class="lo-fi"> __     ____            ______  ____</span>
         / __/ / __ \  / _ \<span class="lo-fi">/ /    / __ \          / ____/ /  _/</span>
        / /_  / / / / /  __<span class="lo-fi">/ /    / / / / ______  / /_     / /</span>
@@ -199,43 +34,49 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
                | K | A | R | L |   | S | T | O | L | L | E | Y |
                + - + - + - + - +   + - + - + - + - + - + - + - +
 </pre>
-  <h2>Preamble</h2>
-  <p>The time has come to reject expensive consumer and prosumer software that
-    limits the extensibility of digital discourse and binds digital production
-    skills to programs that are destined for disruptive upgrades or obsolescence.</p>
+  <h2 id="preamble">Preamble</h2>
+  <p>The time has come to reject expensive, proprietary consumer and prosumer
+    software that limits the extensibility of digital discourse and binds digital
+    production literacies to programs that are destined for disruptive upgrades
+    or obsolescence.</p>
   <p>The digital discourse that we, in the loosely-defined fields of rhetoric
     and composition, computers and writing, and technical communication, ought
     to be producing should be software- and device-independent.</p>
-  <p>Furthermore, the skills and language we develop as digital producers in
-    our efforts to advance scholarship and knowledge-making should also enable
+  <p>Furthermore, the literacies and language we develop as digital producers
+    in our efforts to advance scholarship and knowledge-making should enable
     us to speak confidently, authoritatively, and unambiguously with one another
-    about production, regardless of who can afford (or install) what at their
-    home institutions or on their personal machines.</p>
+    about digital production, regardless of who can afford (or install) what
+    at their home institutions or on their personal machines.</p>
   <p>And as teachers, we should actively seek to provide students with sustainable,
     extensible digital literacies through open, rhetorically grounded digital
-    production practices. Neither Flash, Word, Dreamweaver nor any one software
-    package is consistent with that goal.</p>
+    production practices that emphasizes the <em>source</em> in “open source.”
+    Neither Flash, Word, Dreamweaver nor any one software package, proprietary
+    or open-source, is consistent with that goal.</p>
   <h2>Defining Lo-fi Technologies</h2>
-  <p>Lo-fi production technologies are basic, free, and consist of and/or can
+  <p>Lo-fi production technologies are stable, free, and consist of and/or can
     retrograde to:</p>
   <ol>
     <li>Plain text files (.txt, .xml, .htm, .css, .js, etc.)</li>
     <li>Plain text editors (Notepad, TextEdit, pico/nano, vi, etc.)</li>
-    <li>Languages expressed in plain text (XML, XHTML, CSS, JavaScript, etc.)</li>
+    <li>Open languages expressed in plain text (XML, XHTML, CSS, JavaScript,
+      etc.)</li>
+    <li>Single-media files (image, audio, video) in standardized, open formats</li>
   </ol>
-  <p>Yet despite their humble origins, lo-fi technologies can provide user experiences
-    that are remarkably hi-fi, like <acronym title="Asychronous JavaScript and XML">AJAX</acronym> (whose
+  <p>Yet despite their humble status and decades-old base technology (plain text),
+    lo-fi technologies are the root of user experiences that are remarkably hi-fi,
+    like <acronym title="Asychronous JavaScript and XML">AJAX</acronym> (whose
     most famous application may be Google’s Gmail service).</p>
   <h2>Lo-fi is <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym></h2>
-  <p>Although “lo-fi” describes a preferred class of technologies for digital
-    producers to use, as an acronym, <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym> outlines
-    four production principles that are crucial to the future of digital discourse:</p>
+  <p>“Lo-fi” describes a preferred class of production technologies that digital
+    producers should be able to command, but as an acronym, <acronym class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</acronym> outlines
+    four principles of digital production that are crucial to the advancement,
+    extension, and preservation of digital discourse:</p>
   <ul id="lofi-acronym">
     <li><strong>Lossless</strong>: Discourse presented through lo-fi production
       technologies neither degrades nor becomes trapped in the production itself.
       Text migrates and transforms from a single source (e.g., XML or an application
       of XML); images, video, and other media elements maintain their integrity
-      as individual files.</li>
+      as individual files that may be readily combined into new productions.</li>
     <li><strong>Open</strong>: Lo-fi artifacts’ source code and media elements
       are available for inspection, revision, and extension outside the scope
       of any one piece of production software, and any one producer. Openness
@@ -249,6 +90,10 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
       users’ devices to interpret and perhaps repurpose the digital artifact.</li>
   </ul>
   <h2>Manifesto</h2>
+  <!--[if lt IE 7]>
+  <p class="warning">Dear IE User,<br />I’m sorry that you’re using such a rotten, awful old browser. You have no idea what you’re missing by using this old thing. The points below are clickable, even though your browser will give you no visual indication of that. Consider upgrading to <a href="http://www.mozilla.com/firefox/">FireFox</a>, if that's possible. And pay careful attention to Point 7.<br />
+—KS</p>
+  <![endif]-->
   <dl id="manifesto-points">
     <!--JavaScript should really loop through and add the toggler/element and atStart classes-->
     <dt>1. Software is a poor organizing principle for digital production.</dt>
@@ -406,15 +251,15 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
           or physical ability) is inadequate and beyond the producer’s toleration.</p>
         <p>Lo-fi production technologies deliver artifacts that are editable
           everywhere, and thanks to the ubiquity of web browsers, accessible
-          everywhere, too (at least to some extent). Rather than developing
-          after-the-fact alternative content (e.g., to make up for a missing
-          Flash movie), producing and inventing content in lo-fi technologies that is later
-          replaced/enhanced by hi-fi technologies is a much smarter way of working.
-          Users will appreciate not being told what they must do (particularly
-          if they are left blissfully ignorant of the enhanced coolness they’re
-          missing out on); producers can develop content and ideas in far less
-          taxing environment (compared to Flash), in far more portable and extensible formats,
-          like XML.</p>
+          everywhere, too (at least to some extent). Rather than developing after-the-fact
+          alternative content (e.g., to make up for a missing Flash movie), producing
+          and inventing content in lo-fi technologies that is later replaced/enhanced
+          by hi-fi technologies is a much smarter way of working. Users will
+          appreciate not being told what they must do (particularly if they are
+          left blissfully ignorant of the enhanced coolness they’re missing out
+          on); producers can develop content and ideas in far less taxing environment
+          (compared to Flash), in far more portable and extensible formats, like
+          XML.</p>
       </div>
     </dd>
     <dt>6. If a hi-fi solution is necessary, keep it dynamic and unobtrusive.</dt>
@@ -453,36 +298,50 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
           and formats” below). Of course, that would make for easy downloading
           and local storage of the videos on YouTube (which would be good for
           users, bad for YouTube and its sponsors, as well as copyright holders).</p>
-		<p>Scott Schiller’s <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager 2</a>, for example, takes simple HTML links to sound files, and makes them playable on a Web page for users with both JavaScript and Flash enabled (if they don’t, they can simply follow the links and download the sound files for use with whatever media player they have).</p>
+        <p>Scott Schiller’s <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager
+            2</a>, for example, takes simple HTML links to sound files, and makes
+            them playable on a Web page for users with both JavaScript and Flash
+            enabled (if they don’t, they can simply follow the links and download
+            the sound files for use with whatever media player they have).</p>
       </div>
     </dd>
-    <dt>7. Insist on open standards and formats.</dt>
+    <dt>7. Insist on open standards and formats, <span class="warning">and software
+        that supports them</span>.</dt>
     <dd>
       <div>
-      <blockquote>
-        <p>Because they share a common parent and abide by the same house rules,
-          all XML applications are compatible with each other, making it easier
-          for developers to manipulate one set of XML data via another and to
-          develop new XML applications as the need arises, without fear of incompatibility. <cite title="Page 116"><span>Jeffrey
-          Zeldman,</span> Designing with Web Standards, (2nd ed.)</cite></p>
-      </blockquote>
-      <p>It's astounding that there are not yet open standards for sound or video.
-        The Ogg media container and its Vorbis and Theora CODECs, for sound and
-        video respectively, are both promising and encouraged on Wikipedia, particularly
-        the Wikimedia Commons. Unfortunately, at present, Ogg formats require
-        CODECs to be downloaded for use within other media players, adding an
-        extra step to downloading Windows Media Player, QuickTime, or other players.
-        (However, there is talk of <a href="http://mozillalinks.org/wp/2007/06/firefox-3-to-feature-native-audio-video-support/">native
-        Ogg support within Firefox</a> coupled with the <a href="http://www.whatwg.org/">WHATWG</a>’s <a href="http://www.whatwg.org/specs/web-apps/current-work/">HTML
-        5 Draft</a> specification, which is competing, somewhat, with the W3C).</p>
-		<p>There are standards for languages, which are openly available from <a href="http://w3.org/">W3C</a> (e.g., <a href="http://www.w3.org/XML/">XML</a>, <a href="http://www.w3.org/TR/xhtml1/">XHTML</a>, <a href="http://www.w3.org/Style/CSS/">CSS</a>) and  
-          <a href="http://www.ecma-international.org/">ECMA</a> (most notably <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a>, the standard version of JavaScript). But there are other standards, from character sets at <a href="http://www.iso.org/">ISO</a> to <a href="http://www.iana.org/assignments/media-types/">file
-          formats and MIME/Internet media types</a> at <a href="http://www.iana.org/">IANA</a>. And if all else fails, particularly regarding choices of single-media files, consult the <a href="http://www.loc.gov/standards/">United
-        States Library of Congress’s developed and adopted standards</a>. All free. All open. All lo-fi.</p>
-      <div>
-    </dd>
+        <blockquote>
+          <p>Because they share a common parent and abide by the same house rules,
+            all XML applications are compatible with each other, making it easier
+            for developers to manipulate one set of XML data via another and
+            to develop new XML applications as the need arises, without fear
+            of incompatibility. <cite title="Page 116"><span>Jeffrey Zeldman,</span> Designing
+            with Web Standards, (2nd ed.)</cite></p>
+        </blockquote>
+        <p>It's astounding that there are not yet open standards for sound or
+          video. The Ogg media container and its Vorbis and Theora CODECs, for
+          sound and video respectively, are both promising and encouraged on
+          Wikipedia, particularly the Wikimedia Commons. Unfortunately, at present,
+          Ogg formats require CODECs to be downloaded for use within other media
+          players, adding an extra step to downloading Windows Media Player,
+          QuickTime, or other players. (However, there is talk of <a href="http://mozillalinks.org/wp/2007/06/firefox-3-to-feature-native-audio-video-support/">native
+          Ogg support within Firefox</a> coupled with the <a href="http://www.whatwg.org/">WHATWG</a>’s <a href="http://www.whatwg.org/specs/web-apps/current-work/">HTML
+          5 Draft</a> specification, which is competing, somewhat, with the W3C).</p>
+        <p>There are standards for languages, which are openly available from <a href="http://w3.org/">W3C</a> (e.g., <a href="http://www.w3.org/XML/">XML</a>, <a href="http://www.w3.org/TR/xhtml1/">XHTML</a>, <a href="http://www.w3.org/Style/CSS/">CSS</a>)
+          and <a href="http://www.ecma-international.org/">ECMA</a> (most notably <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a>,
+          the standard version of JavaScript). But there are other standards,
+          from character sets at <a href="http://www.iso.org/">ISO</a> to <a href="http://www.iana.org/assignments/media-types/">file
+          formats and MIME/Internet media types</a> at <a href="http://www.iana.org/">IANA</a>.
+          And if all else fails, particularly regarding choices of single-media
+          files, consult the <a href="http://www.loc.gov/standards/">United States
+          Library of Congress’s developed and adopted standards</a>. All free.
+          All open. All lo-fi.</p>
+      </div>
     </dd>
   </dl>
+  <h2>References</h2>
+  <ul id="references">
+    <li>List goes here.</li>
+  </ul>
 </div>
 </body>
 </html>
