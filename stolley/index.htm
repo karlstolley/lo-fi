@@ -12,6 +12,13 @@ Code licensed under the BSD License:
 http://developer.yahoo.net/yui/license.txt
 version: 2.2.2
 */
+<!--
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.2.2
+*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
 	margin:0;
 	padding:0;
@@ -56,13 +63,13 @@ body {
 	width: 49.5em;
 }
 #container > * {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 p, dd, ul {
 	line-height: 1.7;
 }
 li {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 .lo-fi {
 	color: white;
@@ -75,8 +82,9 @@ h1, .skip {
 	font-size: 120%; /*Must be corrected for IE*/
 	margin-bottom: 0em;
 }
-h2 {
+div#container > h2 {
 	margin-top: 3em;
+	color: #FFFFFF;
 }
 h2:before {
 	content: "/* ";
@@ -88,7 +96,9 @@ strong {
 	font-weight: bold;
 }
 ul#lofi-acronym li:first-letter {
-	color: red;
+	color: white;
+	font-size: 2em;
+	line-height: .5;
 }
 /*Accordion Properties*/
 dl {
@@ -160,33 +170,24 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
 </pre>
   <h2>Preamble</h2>
   <!--iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
-  <p>The days of designing webpages to be webpages have ended. So have the days
-    of using WYSIWYG editors, which misguidedly incorporate web authors’ visual
-    choices, making them a part of the structural code (XHTML) or HTML.</p>
+  <p>The days of designing webpages to be mere webpages have ended. So have the
+    days of using WYSIWYG editors, which clutter the structure of a document
+    with a web writer’s visual choices.</p>
   <p>But a casual observer of our field would never know this, given that writing
     for the Web is often taught like it’s 1998.</p>
   <p>Web production now stands on the threshold of a new era, the era of the
-    semantic Web (which will soon be so synonymous with digital discourse as
-    to be a redundant term). This is an era of XML and structural documents,
-    an era of increasingly diverse and ubiquitous web access that goes far beyond
-    the familiar portal of the desktop browser (which is what one purportedly
-    “sees” in a WYSIWYG editor). This is an era when devices will need to be
-    able to interpret webpages and web-available discourse as much as, if not
-    more than, humans.</p>
-  <p>How will we, in the loosely defined fields of rhetoric and composition,
-    computers and writing, and technical communication, prepare our discourse–and
-    teach our students–to participate and even shape the direction of digital
-    discourse?</p>
-  <p>We will not rely on software. Dreamweaver will not save us, nor Frontpage.
-    Nor will Drupal, nor any other piece of software–open-source or otherwise–so
-    long as that software protects us from the deeper levels of a document’s
-    structural meaning (and the interdependent levels of visual presentation
-    across a variety of devices and media), and so long as software insists on
-    making visual choices (“what you <em>see</em>”) the primary mode of web development.
-    No, this software will not save us–in fact, it will only harm the progress
-    and improvement, the flexibility and sustainability of web-available discourse.</p>
-  <h2>Definitions</h2>
-  <h2>L.O.-F.I.</h2>
+    “semantic Web” (which will soon be so synonymous with digital discourse as
+    to be a redundant term).</p>
+  <p>This is an era of XML and structural documents, an era of increasingly diverse
+    and ubiquitous web access that goes far beyond the familiar portal of the
+    desktop browser (which is what one purportedly “sees” in a WYSIWYG editor).</p>
+  <p>This is an era when devices will need to be able to interpret and manipulate
+    web-available discourse as much as, if not more than, humans.</p>
+  <p>This is an era when the lo-fi technology of plain text and the text editor,
+    combined with fluent literacy in the languages supporting digital discourse,
+    must supplant ineffective hi-fi technologies like the WYSIWYG editor, in
+    both its desktop (Dreamweaver) and web-based forms (Blogger.com).</p>
+  <h2>Definining L.O.-F.I.</h2>
   <ul id="lofi-acronym">
     <li><strong>Lossless</strong>: Discourse presented through lo-fi production
       technologies neither degrades nor becomes trapped in the production itself.
@@ -195,33 +196,32 @@ var accordion = new Accordion('dt.atStart', 'dd.atStart', {
     <li><strong>Open</strong>: Lo-fi production technologies make their source
       code and materials available for inspection, revision, and extension outside
       of the scope of any one piece of production software. This includes, by
-      default, end-user/reader customization and repurposing. Aside from single-media
-      files for image, video, and sound, everything about a digital artifact:
-      its structure, its visual presentation, and any interactive elements, including
-      motion, should be described in source code.</li>
+      default, end-user/reader customization and repurposing.</li>
     <li><strong>Flexible</strong>: Content presented using lo-fi production technologies
       can be experienced unobstrusively in different ways by different users.</li>
     <li><strong>In(ter)dependent</strong>: Lo-fi production technologies direct
-      orchestration (a recipe), not composition (a TV dinner), allowing users’
-      devices to interpret the production the way a chef interprets a recipe</li>
+      orchestration (like a recipe), not composition (like a TV dinner), allowing
+      users’ devices to interpret the production, sort of the way a chef interprets
+      a recipe.</li>
   </ul>
   <h2>Manifesto</h2>
   <dl id="manifesto-points">
-    <dt class="toggler atStart">01. The keyboard is a mightier production tool
-      than the mouse.</dt>
+    <dt class="toggler atStart">01. All lo-fi productions can be edited from
+      a simple text editor.</dt>
     <dd class="element atStart">
-      <p>What does this mean?</p>
-      <p>I'm not really sure!</p>
+      <p>Embrace the simplicity and austerity of the text editor. No buttons,
+        just content. And code.</p>
     </dd>
-    <dt class="toggler atStart">02. Nothing will ever best the sustainability
-      and flexibility of a text file.</dt>
+    <dt class="toggler atStart">02. Code is just as important as content.</dt>
     <dd class="element atStart">
-      <p>Plain text rocks.</p>
+      <p>Sorry, there’s just no getting around this. Code matters. It makes digital
+        communication possible, and will be absolutely essential to successful
+        digital discourse in the semantic web.</p>
     </dd>
-    <dt class="toggler atStart">03. Skills with languages will outlast skills
-      with software.</dt>
+    <dt class="toggler atStart">03. Without meaningful structure, digital discourse
+      is useless.</dt>
     <dd class="element atStart">
-      <p>Plain text rocks.</p>
+      <p>Any digital writing without at least a touch of XML is already obsolete.</p>
     </dd>
     <dt class="toggler atStart">04. There is no greater digital transgression
       than File &gt; Import.</dt>
