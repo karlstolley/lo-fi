@@ -3,15 +3,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>The Lo-Fi Manifesto</title>
-<!--Load stylesheets-->
+
+<!--Load screen stylesheet-->
 <link rel="stylesheet" href="manifesto.css" media="screen" />
+<!--Load limited print stylesheet-->
 <link rel="stylesheet" href="print.css" media="print" />
-<!--Fix some CSS things for IE-->
-<!--[if IE]><link rel="stylesheet" href="ie.css" media="all" /><![endif]-->
+
+<!--Fix some CSS things that IE messes up using conditional comments
+(See http://www.quirksmode.org/css/condcom.html). Because it is
+between conditional comments, the following stylesheet is only 
+visible to IE:-->
+
+<!--[if IE]>
+<link rel="stylesheet" href="ie.css" media="all" />
+<![endif]-->
+
 <!--Load the Mootools library elements-->
 <script type="text/javascript" src="mootools.js"></script>
-<!--Load the site-specific javascript-->
+<!--Load the webtext-specific javascript. No javascript is actually
+present in the XHTML, making it completely unobtrusive.-->
 <script type="text/javascript" src="site.js"></script>
+<script type="text/javascript" src="http://development.karlstolley.com/kairos/toolbar/js/krtp-toolbar.js"></script>
 </head>
 <body>
 <div id="container">
@@ -93,12 +105,7 @@
       the media elements that constitute a digital artifact.</li>
   </ul>
   <h2>Manifesto</h2>
-  <!--[if lt IE 7]>
-  <p class="warning">Dear IE User,<br />The points below are clickable, even though your browser will give you no visual indication of that. Consider upgrading to <a href="http://www.mozilla.com/firefox/">FireFox</a>, if that's possible: not just to better experience this piece, but to improve your Web experience in general.<br />
-—KS</p>
-  <![endif]-->
   <dl id="manifesto-points">
-    <!--JavaScript should really loop through and add the toggler/element and atStart classes-->
     <dt>1. Software is a poor organizing principle for digital production.</dt>
     <dd>
       <div>
@@ -153,8 +160,11 @@
     <dd>
       <div>
         <blockquote>
-          <p>People may be unfitted by being fit in an unfit fitness. <cite><span>Kenneth
-                Burke,</span> Permanence and Change</cite></p>
+          <p>The ability to “read” a medium means you can <em>access</em> materials
+            and tools created by others. The ability to “write” in a medium means
+            you can <em>generate</em> materials and tools for others. You must
+            have both to be literate. <cite class="article" title="Page 125"><span>Alan
+            Kay,</span> “User Interface: A Personal View”</cite></p>
         </blockquote>
         <p>Acts of digital production should contribute to a deeper literacy
           than learning to point and click through an arbitrary set of menus
@@ -205,7 +215,7 @@
           lines of styles in CSS must be <strong>terminated</strong>, as must
           lines of PHP code. <strong>Nested</strong> tags in HTML resemble statements
           that are <strong>nested</strong> in Ruby. Prepared with this sort of
-          vocabulary, digital producers can develop mental modesl for how languages
+          vocabulary, digital producers can develop mental models for how languages
           operate. They can even leverage exacting Google searches to solve a
           wide range of production problems.</p>
         <p>Developer communities are the other component of a language’s stability.
@@ -219,7 +229,7 @@
           discourse.</p>
       </div>
     </dd>
-    <dt>3. Discourse should never be trapped by production technologies.</dt>
+    <dt>3. Discourse should not be trapped by production technologies.</dt>
     <dd>
       <div>
         <blockquote>
@@ -234,27 +244,39 @@
           ways (e.g., dependence on a specific piece of software to view the
           artifact) are actually steps backward from the comparatively open access
           that books and other printed matter provide.</p>
-        <p>The Web and even the <a href="http://creativecommons.org/">Creative
-            Commons</a> are efforts steeped in the promise of openness. But a
-            Creative Commons (CC) license that allows for derivative works of
-            a Web-available Flash movie is an oxymoron at best (just try to extract
-            an image from a Flash movie). At worst, the CC license emphasizes
-            gestures of openness over interrogating the materiality of technologies
-            and their capacity to support derivative discourse.</p>
+        <p>The selfishness of closed, roach-motel formats and WYWSIWYG software
+          is implicit in the acronym: What YOU See is What YOU Get. As though
+          YOU, the producer, were the only one who mattered in the digital rhetorical
+          situation (<em>if it looks good for me in Dreamweaver or FrontPage</em>,
+          so the logic goes, <em>it must look good everywhere for everyone</em>).
+          In a time when screens range between postage-stamp-sized cell phones
+          and 71-inch flat panel LCDs, it is lunacy to assume that what the producer
+          sees is what everyone, indeed <em>anyone</em> else sees. Thoughtful
+          digital producers should be much more concerned about what audience
+          members GET than what they SEE.</p>
+        <p>What audiences should get is flexible, open discourse. The Web and
+          even the <a href="http://creativecommons.org/">Creative Commons</a> are
+          efforts steeped in the promise such openness. But a Creative Commons
+          (CC) license that allows for derivative works of a Web-available Flash
+          movie is an oxymoron at best (just try to extract an image from a Flash
+          movie). At worst, the CC license emphasizes gestures of openness over
+          interrogating the materiality of technologies and their capacity to
+          support derivative discourse.</p>
         <p>To genuinely make digital discourse friendly to derivative works,
           it needs to be much more flexible (cut and paste does not count). Ultimately,
           end users and their devices should be responsible for combining content
           of different media elements—not software or file formats like Flash,
           and really not producers, either. The producer’s responsibility is
           to reference and orchestrate elements that can be accessed in a combined
-          or piecemeal fashion: only then is a CC license viable, maybe even
-          honest.</p>
-        <p>Any given digital artifact needs to be understood not as a final resting
-          place for discourse, but as a stream for further, unfettered access.
-          A Web page listing an organization’s members’ names and email addresses,
-          for example, can be far more open through the use of <a href="http://microformats.org/">microformats</a>.
-          Rather than cutting and pasting the contents of the page, or returning
-          each time the page’s information is needed, a user can, via the presence
+          or piecemeal fashion: only then is a CC derivative-works license viable,
+          or even honest.</p>
+        <p>Any given digital artifact needs to be constructed not as a final
+          resting place for discourse, but as a pause in a stream of further,
+          unfettered access. A Web page listing an organization’s members’ names
+          and email addresses, for example, can be far more open through the
+          use of <a href="http://microformats.org/">microformats</a>. Rather
+          than cutting and pasting the contents of the page, or returning each
+          time the page’s information is needed, a user can, via the presence
           of <a href="http://microformats.org/wiki/hcard">the hCard microformat</a> and
           a technology like <a href="https://addons.mozilla.org/firefox/addon/4106">Operator</a>,
           import some or all of the membership’s contact information directly
@@ -264,69 +286,19 @@
         <p>Single-sourcing with lo-fi XML technologies and their microformat
           cousins is an unprecedented and unparalleled method to structure and
           openly share content. But dependence on WYSIWYG software has kept producers
-          in our field largely ignorant of XML. Even the XML backbone to OpenOffice.org’s
-          implementation of the Open Document Type (ODT) format is a limited
-          use of XML. OOo appears to do to XML what FrontPage and Dreamweaver
-          have done to HTML: hacking up the language to accomodate visual choices
-          (XML is a structural, not visual, markup language), and distorting
-          what ought to be human-readable code into something meaningful only
-          to machines.</p>
-        <p>It would not be much of a stretch to say that our fascination with
-          the visual aspects of digital production is the root cause of why we
-          continue to ignore matters of structure and language, the two keys
-          to more flexible digital discourse. That is not to devalue the importance
-          visual expression in the digital medium; but limiting a producer’s
-          attention to the visual aspects of digital artifacts, as WYSIWYG software
-          does, comes at the expense of the larger concerns of openness.</p>
-        <p>In place of openness, we are confronted with the selfishness of closed,
-          roach-motel formats and WYWSIWYG software. The selfishness of WYSIWYG
-          is implicit in the acroynm: What YOU See is What YOU Get. As though
-          YOU, the producer, were the only one who mattered (if it looks good
-          for me in Dreamweaver or FrontPage, it must look good everywhere for
-          everyone). In a time when screens range between postage-stamp-sized
-          cell phones and 71-inch flat panel LCDs, it is lunacy to assume that
-          what you, the producer, sees is what everyone sees. And as in the case
-          of discourse trapped in a Flash movie, the acronym might be better
-          stated as What, If Anything, Readers See is All They Get.</p>
+          in our field and elsewhere largely ignorant of XML. Even the XML backbone
+          to OpenOffice.org’s implementation of the Open Document Type (ODT)
+          format is a limited use of XML. OOo appears to do to XML what FrontPage
+          and Dreamweaver have done to HTML: hacking up the language to accommodate
+          visual choices (XML is a structural, not visual, markup language),
+          and needlessly complicating what ought to be human-readable code into
+          something meaningful only to machines.</p>
+        <p>Producers command lo-fi technologies at the code level not in service
+          to machines, but in service to other human beings whose specific technology
+          access and physical ability are ultimately unknowable.</p>
       </div>
     </dd>
-    <dt>4. Code-level production is not limited to digital artifacts.</dt>
-    <dd>
-      <div>
-        <blockquote>
-          <p>The ability to “read” a medium means you can <em>access</em> materials
-            and tools created by others. The ability to “write” in a medium means
-            you can <em>generate</em> materials and tools for others. You must
-            have both to be literate. <cite class="article" title="Page 125"><span>Alan
-            Kay,</span> “User Interface: A Personal View”</cite></p>
-        </blockquote>
-        <p>Lo-fi technologies rely on human-editable code, rather than corporate
-          secrets, to make communication possible. Therefore, in lo-fi productions,
-          code is demonstratively as important as content; effective digital
-          rhetoric rests on both. Abstracted just a little, being unable to access
-          a PowerPoint presentation by virtue of lacking the PowerPoint software
-          is ultimately a code issue. No well-meaning digital rhetor intends
-          to make content inaccessible; but the unexamined adoption of production
-          technologies may do exactly that.</p>
-        <p>Languages that early Web writers worked with—HTML, JavaScript (Netscape)/JScript
-          (Internet Explorer)—were essentially without a common, workable standard
-          (the standards existed, but no browser supported them). Thus the WYSIWYG
-          Web editor was readily adopted, as it generated code that was no worse
-          (but no better) than what humans could write. Of course, the WYSIWYG-generated
-          HTML code was impenetrable, which may help explain why digital producers
-          may be prejudiced against code-level Web development today: most of
-          what they may have seen not written by humans, but generated by Dreamweaver
-          or FrontPage.</p>
-        <p>Malformed code, whether written by humans or generated by machines,
-          sends the same bad, if unintentional messages about content that a
-          shoddily produced print publication does. Writing good code is neither
-          an end in itself nor a suggestion that technology trumps all other
-          digital rhetorical concerns. But the way code performs in a Web browser
-          or other device will certainly seem to be a reflection of the care
-          and attention to detail that scholars, in particular, expect of content.</p>
-      </div>
-    </dd>
-    <dt>5. Respect and forgive the end user.</dt>
+    <dt>4. Accommodate and forgive the end user, not the producer.</dt>
     <dd>
       <div>
         <blockquote>
@@ -334,28 +306,57 @@
             write a little bit of code. <cite title="Page 164"><span>Steve Krug,</span> Don’t
             Make Me Think, (2nd ed.)</cite></p>
         </blockquote>
-        <p>There is not better way to lose the good will of audience members
-          than to bombard them series of messages demanding the installation
-          or upgrade of software and plugins or, worse still, an announcement
-          to the effect that their equipment (and perhaps by extension, financial
-          status or physical ability) is inadequate and beyond the producer’s
-          toleration.</p>
-        <p>Lo-fi production technologies deliver artifacts that are editable
-          everywhere, and thanks to the ubiquity of Web browsers, accessible
-          everywhere, too (at least to some extent). Rather than developing after-the-fact
-          alternative content (e.g., to make up for a missing Flash movie), producing
-          and inventing content in lo-fi technologies that is later replaced/enhanced
-          by hi-fi technologies is a much smarter way of working.</p>
-        <p>Put another way, there is no good reason to type text into a Flash
-          movie; XHTML handles text much better than Flash ever will.</p>
+        <p>There is no better way to lose the good will of audience members than
+          to bombard them with a series of messages demanding the installation
+          or upgrade of software and plugins or, worse, to announce that their
+          equipment (and perhaps by extension, financial status or physical ability)
+          is wholly inadequate and beyond the producer’s toleration. Even worse
+          still may be no message or warning at all: just a blank screen or hopelessly
+          malfunctioning digital artifact.</p>
+        <p>End users must be accommodated and respected, even at the expense
+          of the producer’s ultimate vision for a digital artifact. Yet it is
+          often producers who are, or ought to be, begging for forgiveness (readers
+          just go elsewhere): posting unusual file types to email discussion
+          lists, creating Web pages whose hyperlinks only function in Internet
+          Explorer, building Flash movies when XHTML and CSS would more than
+          suffice.</p>
+        <p>Producers deserve no forgiveness. None. Why is it that excuses like
+          “If I knew how to, I would have...” or “What I really wanted to do...”
+          continue to be acceptable in the digital medium? Imagine such excuses
+          being offered (and accepted) for any other rhetorical choice, or just
+          plain laziness.</p>
+        <p>A poor technological choice that denies access to anyone, for any
+          reason, is ultimately a rhetorical problem—particularly when there
+          are lo-fi technologies, like valid XHTML, that inherently address issues
+          of access. The time has come to stop forgiving colleagues and students
+          for their technological shortcomings and ignorance, and hold them accountable
+          for technological choices as they would be held accountable for any
+          other rhetorical gaffe.</p>
+        <p>This is not about elitism; it is about raising our expectations of
+          one another to embrace and take responsibility for the rhetorical concerns
+          that comprise the digital medium. So long as producers are forgiven,
+          either by their audience or by the false assurances of WYSIWYG software,
+          digital production will only attend to the question of “How to do this?”
+          when the question ought to be, “How to do this <em>best</em>?”</p>
+        <p>Lo-fi production technologies are able to deliver artifacts that are
+          editable everywhere, and accessible everywhere, too (at least to some
+          extent). Rather than developing after-the-fact alternative content
+          (e.g., to make up for a missing Flash movie), producing and inventing
+          in lo-fi technologies addresses the essential need for users to access
+          content regardless of their conditions, including physical ability.</p>
+        <p>Writing good code is neither an end in itself nor a testament to the
+          supremacy of technology over all other rhetorical concerns. Rather,
+          good code arises from equal application of the care and attention to
+          detail that scholars, in particular, expect of content.</p>
         <p>Users will appreciate not being told what they must do (particularly
           if they are left blissfully ignorant of the enhanced coolness they’re
           missing out on); producers can develop content and ideas in far less
-          taxing environment (compared to Flash), in far more portable and extensible
-          formats, like XML.</p>
+          taxing lo-fi environments (compared to Flash), in far more portable
+          and extensible formats, like XML, with far greater confidence in audience
+          access than WYSIWYG software could ever provide.</p>
       </div>
     </dd>
-    <dt>6. If a hi-fi element is necessary, keep it dynamic and unobtrusive.</dt>
+    <dt>5. If a hi-fi element is necessary, keep it dynamic and unobtrusive.</dt>
     <dd>
       <div>
         <blockquote>
@@ -373,8 +374,8 @@
           which are accessible only through media players and browser plugins.</p>
         <p>Even lo-fi typography solutions lag behind their hi-fi counterparts,
           like Flash (whose font-embedding capabilities alone drew many in the
-          graphic design community away from HTML and CSS); designing with pure
-          CSS means limiting oneself to fonts commonly available on most operating
+          graphic design community away from HTML and CSS). Designing with pure
+          CSS entails limiting oneself to fonts commonly available on most operating
           systems. While there are glimmers of hope that major Web browsers will
           enable <a href="http://www.alistapart.com/articles/cssatten">support
           for TrueType Web fonts</a> (fonts that can be accessed over the Web
@@ -393,14 +394,17 @@
           fails in an imageless CSS-enabled environment.</p>
         <p>The use of any hi-fi technology should operate much like sIFR: taking
           some readily available media element or text, and enhancing it with
-          extended functionality for properly equipped users.</p>
+          extended functionality for properly equipped users—without punishing
+          lesser-equipped users.</p>
         <p>Unobtrusive solutions like sIFR are rare, though. The videos on YouTube,
           for example, are dynamically loaded into a shell Flash movie that contains
           the controls for playing and pausing the video clip. However, if YouTube
           were to be fully unobtrusive, it would offer links in the HTML to movies
           in different formats (at least until an open, widely supported format
           is available; see “Insist on open standards and formats” below)—not
-          just the proprietary Flash Video (.flv) format.</p>
+          just the proprietary Flash Video (.flv) format. In the absence of Flash
+          or JavaScript, YouTube will not function, rendering all of its content
+          inaccessible.</p>
         <p>A dynamic and unobtrusive lo-fi media player solution like Scott Schiller’s <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager
             2</a> takes simple HTML links to sound files, and makes them playable
             on a Web page for users with both JavaScript and Flash enabled (in
@@ -414,8 +418,7 @@
             loading onto an iPod or other portable audio player.</p>
       </div>
     </dd>
-    <dt>7. Insist on open standards and formats, <span class="warning">and software
-        that supports them</span>.</dt>
+    <dt>6. Insist on open standards and formats, and software that supports them.</dt>
     <dd>
       <div>
         <blockquote>
@@ -432,12 +435,14 @@
         <p>Software should not be selected based on its high-end features or
           the size of its installed user base in corporate settings. We should
           not trick ourselves into thinking we can better prepare students for
-          the workforce by teaching them the most commonly used word processor
-          or page design software. Instead, we should prepare students with a
-          digital literacy that allows them to focus on the rhetorical situation
-          of digital production, which is bounded first and foremost not by software,
-          but by the openness and support of standards.</p>
-        <p>It’s astounding that there are not yet open standards for sound or
+          the workforce by teaching exclusively the most commonly used word processor
+          or page design software. Instead, we should provide students with a
+          digital literacy that enables them to focus on the rhetorical situation
+          of digital production, which includes familiarity with open standards
+          and formats, and to command any production method, software-enabled
+          or otherwise, that supports them.</p>
+        <p>Despite all of the open standards for text and image listed above,
+          it’s astounding that there are not yet open standards for sound or
           video. The Ogg media container and its Vorbis and Theora CODECs, for
           sound and video respectively, are both promising solutions (especially
           because they are the preferred media formats on Wikipedia, particularly
@@ -448,27 +453,29 @@
           Ogg support within Firefox</a> coupled with the <a href="http://www.whatwg.org/">WHATWG</a>’s <a href="http://www.whatwg.org/specs/web-apps/current-work/">HTML
           5 Draft</a> specification, which is competing, somewhat, with the W3C’s <a href="http://www.w3.org/TR/xhtml2/">XHTML
           2 draft spec</a>).</p>
-        <p>There are standards for languages, which are openly available from <a href="http://w3.org/">W3C</a> (e.g., <a href="http://www.w3.org/XML/">XML</a>, <a href="http://www.w3.org/TR/xhtml1/">XHTML</a>, <a href="http://www.w3.org/Style/CSS/">CSS</a>)
+        <p>There are any number of venues to consult regarding language and format
+          standards. Standards for languages are openly available from the <a href="http://w3.org/">W3C</a> (e.g., <a href="http://www.w3.org/XML/">XML</a>, <a href="http://www.w3.org/TR/xhtml1/">XHTML</a>, <a href="http://www.w3.org/Style/CSS/">CSS</a>)
           and <a href="http://www.ecma-international.org/">ECMA</a> (most notably <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript</a>,
           the standard version of JavaScript). But there are other standards,
           from character sets at <a href="http://www.iso.org/">ISO</a> to <a href="http://www.iana.org/assignments/media-types/">file
           formats and MIME/Internet media types</a> at <a href="http://www.iana.org/">IANA</a>.
           And if all else fails, particularly regarding choices of single-media
-          files, consult the <a href="http://www.loc.gov/standards/">United States
-          Library of Congress’s developed and adopted standards</a>.</p>
+          files, producers may wish to consult the <a href="http://www.loc.gov/standards/">United
+          States Library of Congress’s developed and adopted standards</a>.</p>
         <p>Innovation in the digital medium is not to be found on the paved cow
-          paths of point-and-click, template-driven, fill-in-the-blank <acronym title="What You See is What You Get">WYSIWYG</acronym> software.
-          Indeed, much of the exciting work on the Web involves working beyond
-          the relatively simple languages of XHTML and CSS; the Application Programming
-          Interface (API) and the Integrated Development Environment (IDE) are
-          where the real envelope-pushing action is. But without the kind of
-          source literacy gained from basic languages like XHTML, members of
-          our field will be wholly unprepared to build or command APIs or function
-          competently in IDEs.</p>
+          paths of point-and-click, template-driven, fill-in-the-blank WYSIWYG
+          software. Indeed, much of the exciting work on the Web involves working
+          beyond the relatively simple languages of XHTML and CSS; the Application
+          Programming Interface (API) and the Integrated Development Environment
+          (IDE) are where the real envelope-pushing action is. But without the
+          kind of source literacy gained from basic languages like XHTML, members
+          of our field and our students will be wholly unprepared to build or
+          command APIs or function competently in IDEs.</p>
         <p>Source literacy holds the key not only to more sustainable and accessible
           digital discourse, but to our ability to substantively contribute to
           the many open-source projects, like Drupal, Moodle, and even Firefox,
-          that are redefining digital writing—largely without us.</p>
+          which would no doubt benefit from the expertise and values that members
+          of our field have to share.</p>
       </div>
     </dd>
   </dl>
@@ -477,8 +484,6 @@
     <li>Berners-Lee, Tim, with Fischetti, Mark. (2000). <cite>Weaving the Web:
         The original design and ultimate destiny of the World Wide Web</cite>.
         New York: HarperBusiness.</li>
-    <li>Burke, Kenneth. (1984). <cite>Permanence and change</cite>. Berkeley:
-      University of California Press.</li>
     <li>Kay, Alan. User interface: A personal view. In Randall Packer and Ken
       Jordan (Eds.), <cite>Multimedia: From Wagner to virtual reality</cite> (pp.
       121-131). New York: W.W. Norton.</li>
@@ -492,11 +497,9 @@
     <li>Zeldman, Jeffrey. (2007). <cite>Designing with Web standards</cite> (2nd
       ed.). Berkeley: New Riders.</li>
   </ul>
-  <h2>In-Text Links</h2>
-  <ul class="references">
-  </ul>
   <h2>Validate this Webtext</h2>
-  <p>XHTML 1.0 Strict, CSS</p>
+  <!--CSS link should be fixed to the actual Kairos URL-->
+  <p><a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>, <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://development.karlstolley.com/manifesto/manifesto.css">CSS</a></p>
 </div>
 </body>
 </html>
