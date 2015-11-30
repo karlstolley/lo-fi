@@ -95,6 +95,35 @@ The Lo-Fi Manifesto Styles
   at https://smacss.com
 */
 
+/*
+  First, I want to set up a color palette. The original Lo-Fi Manifesto
+  used a CRT/green-screen effect. It was hard on the eyes, so for this
+  new version, I'll use the palette from Ethan Schoonover's Solarized
+  color palette designed to make text and terminal environments easier
+  to read. The full project is at http://ethanschoonover.com/solarized
+
+  Here are the colors, lifted straight from the SASS example on that
+  page. I'm not going to use SASS though; I'll just hard-code
+  the colors:
+
+      $base03:    #002b36;
+      $base02:    #073642;
+      $base01:    #586e75;
+      $base00:    #657b83;
+      $base0:     #839496;
+      $base1:     #93a1a1;
+      $base2:     #eee8d5;
+      $base3:     #fdf6e3;
+      $yellow:    #b58900;
+      $orange:    #cb4b16;
+      $red:       #dc322f;
+      $magenta:   #d33682;
+      $violet:    #6c71c4;
+      $blue:      #268bd2;
+      $cyan:      #2aa198;
+      $green:     #859900;
+*/
+
 /* Base Styles (Basic Element Selectors; Typefaces and Colors) */
 html {
   background: #002907; /*
