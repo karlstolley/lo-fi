@@ -194,6 +194,9 @@ p {
 ol,ul,li {
   padding-bottom: 1em;
 }
+li:last-child {
+  padding-bottom: 0em; /* Compliant browsers will remove padding from last li */
+}
 h2 {
   padding-top: 2em;
 }
