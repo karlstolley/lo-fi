@@ -133,9 +133,12 @@ html {
                        */
   color: #00FF00; /* Color the text bright green */
   font-size: 100%; /* Go with native font-size */
-  font-family: Menlo, Consolas, "Courier New", Courier, mono; /*
+  font-family: "Fira Mono", Menlo, Consolas, "Courier New", Courier, mono;
+                                                              /*
                                                                 Establish the base typefaces for the
-                                                                page.
+                                                                page. Erik Spiekermann's excellent
+                                                                and open-source Fira family will
+                                                                do the trick nicely.
                                                               */
   -webkit-text-size-adjust: none; /*
                                      Correct a rendering bug in Safari on iOS that over-inflates
@@ -145,6 +148,11 @@ html {
                                      based media-query.
 
                                   */
+  -webkit-font-variant-ligatures: no-common-ligatures; /*
+                                                          Disable Safari's default of showing
+                                                          ligatures, at least for monospaced
+                                                          typefaces
+                                                       */
 }
 body { line-height: 1.8; } /* Set up a generous line-height; almost double-spaced */
 i,em { font-style: italic; } /*Italicize the em tag*/
@@ -178,13 +186,16 @@ abbr {
 
 /* Layout Styles (Mobile-First; Media-Query-based Styles in State, Below)*/
 body {
-  padding: 1.8em 1.2em;
+  padding: 1em 1.2em 2em 1.2em;
 }
 p {
-  padding-bottom: 1.8em;
+  padding-bottom: 1em;
 }
-ol,ul,li,h1,h2 {
-  padding-bottom: .9em;
+ol,ul,li {
+  padding-bottom: 1em;
+}
+h2 {
+  padding-top: 2em;
 }
 ol {
   margin-left: 3em; /*
@@ -211,6 +222,7 @@ ul.references cite {
   font-style: italic; /* Even though Courier isn't the best font for this, italicize the cites */
 }
 #header h2 {
+  padding-top: 0;
   color: inherit; /* No white on h2 (my name/affiliation) */
 }
 #header h2:before {
