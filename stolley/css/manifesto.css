@@ -126,12 +126,10 @@ The Lo-Fi Manifesto Styles
 
 /* Base Styles (Basic Element Selectors; Typefaces and Colors) */
 html {
-  background: #002907; /*
-                          A solid color that approximates the old CRT effect from v1.0.1.
-                          The effect was cute, and that's about it. In an age of high
-                          density/retina displays, it just doesn't hold up well.
+  background: #073642; /*
+                          Second-darkest Solarized base color.
                        */
-  color: #00FF00; /* Color the text bright green */
+  color: #eee8d5; /* Second-brightest Solarized base color */
   font-size: 100%; /* Go with native font-size */
   font-family: "Fira Mono", Menlo, Consolas, "Courier New", Courier, mono;
                                                               /*
@@ -154,11 +152,29 @@ html {
                                                           typefaces
                                                        */
 }
-body { line-height: 1.8; } /* Set up a generous line-height; almost double-spaced */
+body { line-height: 1.6; } /* Set up a generous line-height; almost double-spaced */
 i,em { font-style: italic; } /*Italicize the em tag*/
 b,strong { font-weight: bold; } /* Bold the strong tag */
+i,em,b,strong {
+  color: #fdf6e3;
+}
+*:before,*:after {
+  color: #93a1a1; /*Darker base color than surrounding text */
+  font-weight: normal;
+  font-style: normal;
+}
+i:before,i:after,em:before,em:after {
+  content: "*";
+}
+b:before,b:after,strong:before,strong:after {
+  content: "**";
+}
 h1,h2 {
-  color: #FFF;
+  color: #cb4b16; /* Orange Solarized accent color */
+  font-weight: bold;
+}
+h1:before,h2:before {
+  color: #b58900; /* Yellow Solarized accent color */
 }
 h1:before {
   content: "#"; /*Compliant browsers will render Markdown-style headings for h1.*/
@@ -175,10 +191,22 @@ h2:before {
 ol {
   list-style-type: decimal; /* Provide numbers on the ordered list */
 }
-a { color: #CCCCCC; text-decoration: none; } /* Color the links gray, and remove the underline */
-abbr {
-  border-bottom: 1px dotted; /*Put in the dotted border on the abbr tag*/
-  cursor: help; /*Change the mouse cursor to the question-mark pointer*/
+a {
+ color: #859900; /* Solarized accent green */
+ /*
+   For browsers that support the new text-decoration-color CSS property, make hyperlink underlines
+   a subtle gray shade. Other browsers will just display the same color as the hyperlink. And that
+   is more than acceptable, if not as nice.
+ */
+ -moz-text-decoration-color: #657b83;
+ -webkit-text-decoration-color: #657b83;
+ text-decoration-color: #657b83;
+}
+abbr[title] {
+  font-weight: normal;
+  background-color: #002b36;
+  color: #2aa198; /* Magenta accent color */
+  padding: 0 .3em;
 }
 
 
@@ -201,17 +229,17 @@ h2 {
   padding-top: 2em;
 }
 ol {
-  margin-left: 3em; /*
+  margin-left: 1.2em; /*
                       Offset the list from left with 3ems of margin; list numbers will appear
                       indented two spaces in compared to running text.
                     */
 }
+dt {
+  margin-bottom: 1em;
+}
 
 /* Module Styles (Core, Often Repeated Page Elements) */
-.lo-fi { color: #FFF; } /*
-                            Make the lo-fi class text white, both in the ASCII art and in the
-                            manifesto
-                         */
+
 ul.references li {
   text-indent: -1.2em; /*
                           Negative text indent with equal, positive padding creates a "hanging"
@@ -226,11 +254,34 @@ ul.references cite {
 }
 #header h2 {
   padding-top: 0;
-  color: inherit; /* No white on h2 (my name/affiliation) */
+  margin-left: 0;
+  color: inherit; /* No special colors on h2 (my name/affiliation) */
+  font-weight: normal; /* No bold, either. Make it appear to be a line of running text. */
 }
 #header h2:before {
   content: none; /* No Markdown hashes, either; make it look like regular running text */
   padding-right: 0; /* Lose the extra padding on h2:before, too */
 }
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
-.nojs dt { color: #FFF; }
+/*
+  These styles will need a Modernizr-prefix for browsers that handle content: -- unlike the
+  decorative Markdown-style stuff above, this actually matters (it numbers the list). This method is
+  way more involved than a simple list-style-style: decimal, but it provides greater flexibility for
+  styling the numbers on the list, while keeping things automated.
+*/
+ol {
+  list-style-type: none;
+  counter-reset: myCount;
+}
+ol > li {
+  counter-increment: myCount;
+  text-indent: -1.8em;
+  padding-left: .6em;
+}
+ol > li:before {
+  content: counter(myCount)".";
+  padding-right: .6em;
+}
+abbr[title].expanded {
+  color: inherit;
+}
