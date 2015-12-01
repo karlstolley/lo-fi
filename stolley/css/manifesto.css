@@ -208,6 +208,13 @@ abbr[title] {
   color: #2aa198; /* Magenta accent color */
   padding: 0 .3em;
 }
+abbr.expanded {
+  font-weight: inherit;
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+  text-decoration: none;
+}
 
 
 
