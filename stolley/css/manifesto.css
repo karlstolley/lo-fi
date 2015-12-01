@@ -261,6 +261,13 @@ ul.references cite {
   content: none; /* No Markdown hashes, either; make it look like regular running text */
   padding-right: 0; /* Lose the extra padding on h2:before, too */
 }
+
+#manifesto-points dd {
+  color: #073642;
+  background-color: #eee8d5;
+}
+
+
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
 /*
   These styles will need a Modernizr-prefix for browsers that handle content: -- unlike the
