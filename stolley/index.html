@@ -12,12 +12,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700" />
 </head>
 <body>
+<div id="page">
 <header id="header">
   <h1 class="skip">The Lo-Fi Manifesto</h1>
   <h2 class="skip">Karl Stolley, Illinois Institute of Technology</h2>
 </header>
-<div id="main">
+<div class="supporting">
 
+  <div class="preamble">
   <h2 id="preamble">Preamble</h2>
   <p>
     The time has come to reject expensive consumer and prosumer software that hinders the
@@ -40,7 +42,10 @@
     production literacies through open, rhetorically grounded digital practices that emphasize the
     <em>source</em> in “free and open source.”
   </p>
+  <!-- /.preamble -->
+  </div>
 
+  <div class="defining-technologies">
   <h2>Defining Lo-fi Technologies</h2>
   <p>
     Lo-fi production technologies are stable and free. They consist of and/or can retrograde to:
@@ -60,7 +65,10 @@
     <abbr title="Asychronous JavaScript and XML">AJAX</abbr> (whose most famous application may be
     Google’s Gmail service).
   </p>
+  <!-- /.defining-technologies -->
+  </div>
 
+  <div class="defining-principles">
   <h2>Lo-Fi is
     <abbr class="lo-fi" title="Lossless, Open, Flexible, In(ter)dependent">LOFI</abbr>
   </h2>
@@ -98,7 +106,13 @@
       render (or not) and perhaps repurpose the media elements that constitute a digital artifact.
     </li>
   </ul>
+  <!-- /.defining-principles -->
+  </div>
 
+<!-- /.supporting -->
+</div>
+
+<div class="main">
   <h2>Manifesto</h2>
   <dl id="manifesto-points">
     <dt>1. Software is a poor organizing principle for digital production.</dt>
@@ -537,6 +551,10 @@
     </dd>
   </dl>
 
+<!-- /.main -->
+</div>
+
+<div class="supporting">
   <h2>References</h2>
   <ul class="references">
     <li>
@@ -572,8 +590,9 @@
     </li>
   </ul>
 
-<!--/div#main-->
+<!-- /.supporting -->
 </div>
+
 <footer id="footer">
   <h2>Validate this Page</h2>
   <p>
@@ -581,5 +600,7 @@
     <a href="jigsaw.w3.org/css-validator/check/referer/" rel="external">CSS</a>
   </p>
 </footer>
+<!-- /#page -->
+</div>
 </body>
 </html>
