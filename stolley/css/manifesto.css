@@ -239,7 +239,6 @@ dt {
 }
 
 /* Module Styles (Core, Often Repeated Page Elements) */
-
 ul.references li {
   text-indent: -1.2em; /*
                           Negative text indent with equal, positive padding creates a "hanging"
@@ -285,3 +284,4 @@ ol > li:before {
 abbr[title].expanded {
   color: inherit;
 }
+
