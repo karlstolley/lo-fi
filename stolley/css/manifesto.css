@@ -188,6 +188,20 @@ h2:before {
   content: "##";  /* Markdown heading levels for h2.*/
   padding-right: .6em; /* Again, put the visual equivalent of a space */
 }
+pre {
+  color: #268bd2;
+  line-height: 1.2;
+}
+pre b {
+  color: #839496;
+  font-weight: inherit;
+}
+pre b:before, pre b:after {
+  content: "";
+}
+pre .flex {
+  font-size: 3.5vw;
+}
 ol {
   list-style-type: decimal; /* Provide numbers on the ordered list */
 }
@@ -276,6 +290,15 @@ ul.references cite {
 
 
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
+.js header h1,
+.js header h2 {
+  position: absolute;
+  left: -20000px;
+}
+body:after {
+  content: "sm";
+  display: none;
+}
 /*
   These styles will need a Modernizr-prefix for browsers that handle content: -- unlike the
   decorative Markdown-style stuff above, this actually matters (it numbers the list). This method is
@@ -308,6 +331,9 @@ abbr[title].expanded {
     margin: 0 auto;
     width: 80%;
   }
+  body:after {
+    content: "med";
+  }
   h1 {
     margin-left: -1.2em;
   }
@@ -316,5 +342,17 @@ abbr[title].expanded {
   }
   ol {
     margin-left: -0.6em;
+  }
+  pre .flex {
+    font-size: 2.2vw;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  body:after {
+    content: "large";
+  }
+  pre .flex {
+    font-size: 2.0vw;
   }
 }
