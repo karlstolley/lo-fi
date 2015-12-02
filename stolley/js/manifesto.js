@@ -22,7 +22,8 @@ jQuery.noConflict();
       loadASCIIArt();
     }).resize();
     function loadASCIIArt() {
-      $('#ascii').html($('#ascii-' + breakpoint.value).html());
+      $('#ascii pre').remove();
+      $('#ascii').prepend($('#ascii-' + breakpoint.value).html());
     }
   });
 })(jQuery);
