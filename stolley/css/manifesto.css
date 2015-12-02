@@ -291,10 +291,13 @@ ul.references cite {
 
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
 .js header h1,
-.js header h2 {
+.js header h2,
+.js figcaption#ascii-caption,
+.js .skip {
   position: absolute;
   left: -20000px;
 }
+
 body:after {
   content: "sm";
   display: none;
