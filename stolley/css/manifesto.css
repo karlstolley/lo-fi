@@ -148,14 +148,6 @@ html {
                                   */
 }
 body { line-height: 1.6; } /* Set up a generous line-height; almost double-spaced */
-header,
-.supporting,
-footer {
-  /* Disable ligatures on monospaced Fira Mono; they look awful */
-  -moz-font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  font-variant-ligatures: no-common-ligatures;
-}
 i,em { font-style: italic; } /*Italicize the em tag*/
 b,strong { font-weight: bold; } /* Bold the strong tag */
 i,em,b,strong {
@@ -275,6 +267,17 @@ dt {
 }
 
 /* Module Styles (Core, Often Repeated Page Elements) */
+header,
+.supporting,
+footer {
+  /* Disable ligatures on monospaced Fira Mono; they look awful */
+  -moz-font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
+}
+.main dd {
+  font-family: "Fira Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 ul.references li {
   text-indent: -1.2em; /*
                           Negative text indent with equal, positive padding creates a "hanging"
