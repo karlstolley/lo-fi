@@ -235,7 +235,19 @@ abbr.expanded {
 
 /* Layout Styles (Mobile-First; Media-Query-based Styles in State, Below)*/
 body {
-  padding: 1em 1.2em 2em 1.2em;
+  padding: 1em 0 2em 0;
+}
+header,
+.supporting,
+footer {
+ padding: 0 1.2em 0 1.2em;
+}
+.main h2 {
+  padding-left: 1.2em;
+}
+.main dt,
+.main dd {
+  padding: 1em 1.2em 0 1.2em;
 }
 p {
   padding-bottom: 1em;
