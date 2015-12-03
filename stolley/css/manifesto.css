@@ -240,7 +240,8 @@ dt {
 /* Module Styles (Core, Often Repeated Page Elements) */
 header,
 .supporting,
-footer {
+footer,
+dt {
   /* Disable ligatures on monospaced Fira Mono; they look awful */
   -moz-font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
