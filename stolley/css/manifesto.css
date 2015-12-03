@@ -146,13 +146,16 @@ html {
                                      based media-query.
 
                                   */
-  -webkit-font-variant-ligatures: no-common-ligatures; /*
-                                                          Disable Safari's default of showing
-                                                          ligatures, at least for monospaced
-                                                          typefaces
-                                                       */
 }
 body { line-height: 1.6; } /* Set up a generous line-height; almost double-spaced */
+header,
+.supporting,
+footer {
+  /* Disable ligatures on monospaced Fira Mono; they look awful */
+  -moz-font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
+}
 i,em { font-style: italic; } /*Italicize the em tag*/
 b,strong { font-weight: bold; } /* Bold the strong tag */
 i,em,b,strong {
