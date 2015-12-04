@@ -346,33 +346,36 @@ ul.references cite {
 }
 .js #manifesto-points.expanded dt {
   background: #073642;
-  position: sticky;
-  top: 0px;
   border: 0;
+}
+.csspositionsticky #manifesto-points.expanded dt {
+  top: 0px;
+  position: sticky;
 }
 body:after {
   content: "sm";
   display: none;
 }
 /*
-  These styles will need a Modernizr-prefix for browsers that handle content: -- unlike the
+  These styles use a Modernizr prefix for browsers that handle content: -- unlike the
   decorative Markdown-style stuff above, this actually matters (it numbers the list). This method is
   way more involved than a simple list-style-style: decimal, but it provides greater flexibility for
   styling the numbers on the list, while keeping things automated.
 */
-ol {
+.generatedcontent ol {
   list-style-type: none;
   counter-reset: myCount;
 }
-ol > li {
+.generatedcontent ol > li {
   counter-increment: myCount;
   text-indent: -1.8em;
   padding-left: .6em;
 }
-ol > li:before {
+.generatedcontent ol > li:before {
   content: counter(myCount)".";
   padding-right: .6em;
 }
+
 abbr[title].expanded {
   color: inherit;
 }
