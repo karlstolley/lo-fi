@@ -211,7 +211,7 @@ footer {
 .main h2 {
   padding-left: 1.2em;
 }
-.main dt,
+.main dt
 .main dd {
   padding: 1em 1.2em 0 1.2em;
 }
@@ -226,6 +226,7 @@ li:last-child {
 }
 h2 {
   padding-top: 2em;
+  padding-bottom: 1em;
 }
 ol {
   margin-left: 1.2em; /*
@@ -233,9 +234,7 @@ ol {
                       indented two spaces in compared to running text.
                     */
 }
-dt {
-  margin-bottom: 1em;
-}
+
 
 /* Module Styles (Core, Often Repeated Page Elements) */
 header,
@@ -328,7 +327,29 @@ ul.references cite {
   position: absolute;
   left: -20000px;
 }
-
+.js #manifesto-points dt {
+  border-top: 1px dashed #859900;
+  padding: .5em 1.2em;
+}
+.js #manifesto-points {
+  border-bottom: 1px dashed #859900;
+}
+.js #manifesto-points dd {
+  display: none;
+}
+.js #manifesto-points.expanded {
+  margin-top: 1px; /* Prevent the slight little jump from disappearing border */
+  border: 0;
+}
+.js #manifesto-points.expanded dd {
+  display: block;
+}
+.js #manifesto-points.expanded dt {
+  background: #073642;
+  position: sticky;
+  top: 0px;
+  border: 0;
+}
 body:after {
   content: "sm";
   display: none;

@@ -25,6 +25,9 @@ jQuery.noConflict();
       $('#ascii pre').remove();
       $('#ascii').prepend($('#ascii-' + breakpoint.value).html());
     }
+    $('#manifesto-points').on('click keypress', function() {
+      $(this).toggleClass('expanded');
+    });
   });
 })(jQuery);
 
