@@ -25,8 +25,18 @@ jQuery.noConflict();
       $('#ascii pre').remove();
       $('#ascii').prepend($('#ascii-' + breakpoint.value).html());
     }
-    $('#manifesto-points').on('click keypress', function() {
-      $(this).toggleClass('expanded');
+    $('#manifesto-points dt').each(function() {
+      var point = {}
+      var text = $(this).text();
+      // Grab text content & data-fragment values
+      point.count = text.substr(0,3); // Preserve opening number for browsers that don't understand content: in CSS
+      point.text = text.substr(3); // Slice off opening number, ., and space
+      point.fragment = $(this).attr('data-fragment');
+      $(this).attr('id', "point-" + point.fragment);
+      $(this).html('<b>'+point.count+'</b>'+'<a href=#point-' + point.fragment + '>' + point.text + '</a>');
+    });
+    $('#manifesto-points dt').on('click keypress', function() {
+      $('#manifesto-points').toggleClass('expanded');
     });
   });
 })(jQuery);

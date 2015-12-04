@@ -331,6 +331,16 @@ ul.references cite {
   border-top: 1px dashed #859900;
   padding: .5em 1.2em;
 }
+.js #manifesto-points b {
+  font-weight: inherit;
+}
+.js #manifesto-points dt a {
+  text-decoration: none;
+}
+.js #manifesto-points dt a:hover,
+.js #manifesto-points dt a:focus {
+  color: inherit;
+}
 .js #manifesto-points {
   border-bottom: 1px dashed #859900;
 }
@@ -374,6 +384,9 @@ body:after {
 .generatedcontent ol > li:before {
   content: counter(myCount)".";
   padding-right: .6em;
+}
+.generatedcontent #manifesto-points {
+  counter-reset: pointCount;
 }
 
 abbr[title].expanded {
