@@ -211,7 +211,7 @@ footer {
 .main h2 {
   padding-left: 1.2em;
 }
-.main dt
+.main dt,
 .main dd {
   padding: 1em 1.2em 0 1.2em;
 }
