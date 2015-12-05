@@ -2,6 +2,10 @@ jQuery.noConflict();
 (function($) {
   $(function() {
     $('html').removeClass('nojs').addClass('js');
+    $('#header').append('<p class="skip">ASCII art below. <a href="#preamble">Skip to text.</a></p>'
+      + '<figure id="ascii" role="img" aria-labelledby="ascii-caption">'
+      + '<figcaption id="ascii-caption">ASCII art of title and author of Lo-Fi Manifesto.</figcaption>'
+      + '</figure>');
     $('abbr[title]').each(function() {
       var abbr, expandedText;
       abbr = $(this).text();
