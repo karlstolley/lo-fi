@@ -229,7 +229,7 @@ h2 {
   padding-bottom: 1em;
 }
 ol {
-  margin-left: 1.2em; /*
+  margin-left: 1.8em; /*
                       Offset the list from left with 3ems of margin; list numbers will appear
                       indented two spaces in compared to running text.
                     */
@@ -272,7 +272,9 @@ dt {
 .supporting strong:before,
 .supporting strong:after {  content: "**";
 }
-h1:before,
+ h1:before,
+ #header h2:before,
+ #footer h2:before,
 .supporting h2:before,
 .main > h2:before {
   color: #cb4b16; /* Orange Solarized accent color */
@@ -285,6 +287,8 @@ h1:before {
                           styles in the State section below.
                        */
 }
+#header h2:before,
+#footer h2:before,
 .supporting h2:before,
 .main > h2:before {
   content: "##";  /* Markdown heading levels for h2.*/
@@ -320,6 +324,10 @@ ul.references cite {
 
 
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
+.nojs header h1 {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
 .js header h1,
 .js header h2,
 .js figcaption#ascii-caption,
@@ -393,14 +401,22 @@ abbr[title].expanded {
   color: inherit;
 }
 
+@media screen and (min-width: 24em) {
+  header,
+  .supporting,
+  footer {
+    padding: 0 5% 0 5%;
+  }
+}
+
 @media screen and (min-width: 48em) {
   html {
     font-size: 110%;
   }
-  body {
-    padding: 1em 0 2em 0;
-    margin: 0 auto;
-    width: 80%;
+  header,
+  .supporting,
+  footer {
+    padding: 0 6.25% 0 6.25%;
   }
   body:after {
     content: "med";
@@ -412,7 +428,7 @@ abbr[title].expanded {
     margin-left: -1.8em;
   }
   ol {
-    margin-left: -0.6em;
+    margin-left: 0;
   }
   pre .flex {
     font-size: 2.2vw;
