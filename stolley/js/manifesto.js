@@ -15,6 +15,10 @@ jQuery.noConflict();
     $('abbr[title]').on('click keypress', function() {
       $(this).html($(this).attr('data-expanded')).addClass('expanded').removeAttr('title tabindex');
     });
+    $('.main blockquote cite span').each(function() {
+      var text = $(this).text().slice(0,-1); // Cut off the comma
+      $(this).html(text);
+    });
     // Grabbing breakpoints from the CSS media queries using a technique outlined at
     //https://www.lullabot.com/articles/importing-css-breakpoints-into-javascript
     var breakpoint = {};

@@ -291,18 +291,43 @@ h2:before {
   font-family: "Fira Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.35;
 }
-
+#manifesto-points dd {
+  color: #073642;
+  background-color: #eee8d5;
+}
 .main i,
 .main em,
 .main b,
 .main strong {
   color: inherit;
 }
+.main blockquote {
+  font-size: 140%;
+  padding-top: 1.4285714286em; /* 2em at font-size: 100% */
+}
+.main blockquote cite {
+  display: block;
+  font-size: 71.42857143%; /* Restores to font-size: 100% */
+  font-style: italic;
+  margin-top: .5em;
+}
+.main blockquote cite a {
+  color: inherit;
+  text-decoration: none;
+}
+.main blockquote cite.article,
+.main blockquote cite span {
+  font-style: normal;
+}
+.main blockquote cite span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 /* Now cancel ALL of the Markdown stuff out on ASCII art and .main dd */
 #ascii *:before,
 #ascii *:after,
-.main #manifesto-points *:before,
-.main #manifesto-points *:after {
+.main dl *:before,
+.main dl *:after {
   content: none;
   margin: 0;
   padding: 0;
@@ -331,10 +356,7 @@ ul.references cite {
   padding-right: 0; /* Lose the extra padding on h2:before, too */
 }
 
-#manifesto-points dd {
-  color: #073642;
-  background-color: #eee8d5;
-}
+
 
 
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
@@ -428,6 +450,9 @@ abbr[title].expanded {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .main blockquote cite {
+    text-align: right;
+  }
 }
 
 @media screen and (min-width: 48em) {
@@ -457,6 +482,14 @@ abbr[title].expanded {
   }
   pre .flex {
     font-size: 2.2vw;
+  }
+  .main blockquote cite {
+    text-align: left;
+    text-indent: -5%;
+    margin-left: 55%;
+  }
+  .main blockquote cite:before {
+    content: "— "; /* Em dash */
   }
 }
 
