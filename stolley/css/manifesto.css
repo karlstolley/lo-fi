@@ -290,7 +290,7 @@ h2:before {
   padding-top: .5em;
   padding-bottom: .5em;
 }
-.main dd {
+.main dd, .commentary {
   font-family: "Fira Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.35;
 }
@@ -359,8 +359,21 @@ ul.references cite {
   padding-right: 0; /* Lose the extra padding on h2:before, too */
 }
 
-
-
+.commentary {
+  color: #002b36;
+  background: #b58900;
+  padding: .5em 1em 0 1em;
+  padding: 2em;
+  margin-bottom: 1em;
+  font-size: inherit;
+  line-height: inherit;
+}
+.commentary p {
+  padding-bottom: .5em;
+}
+.commentary p:last-child {
+  padding-bottom: 0;
+}
 
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
 .nojs header h1 {
