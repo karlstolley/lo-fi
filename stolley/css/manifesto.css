@@ -468,8 +468,8 @@ abbr[title].expanded {
   .main h2,
   .main dt,
   .main dd {
-    padding-left: 6.25%
-    padding-right: 6.25%
+    padding-left: 6.25%;
+    padding-right: 6.25%;
   }
   body:after {
     content: "med";
