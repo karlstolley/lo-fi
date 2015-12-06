@@ -147,7 +147,7 @@ html {
 
                                   */
 }
-body { line-height: 1.6; } /* Set up a generous line-height; almost double-spaced */
+body { line-height: 1.45; } /* Set up a line-height that's just shy of space and a half */
 i,em { font-style: italic; } /*Italicize the em tag*/
 b,strong { font-weight: bold; } /* Bold the strong tag */
 i,em,b,strong {
@@ -289,7 +289,9 @@ h2:before {
 }
 .main dd {
   font-family: "Fira Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.35;
 }
+
 .main i,
 .main em,
 .main b,
