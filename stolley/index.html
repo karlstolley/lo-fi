@@ -518,6 +518,76 @@
         </p>
       </blockquote>
 
+      <p>
+        It used to be necessary to employ Flash to handle audio and video, or for web typography
+        beyond commonly installed system fonts. But that’s no longer the case. HTML5’s
+        <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags are now widely supported, as
+        is the CSS <code>@font-face</code> property.
+      </p>
+      <p>
+        Of course, <em>that</em> those technologies exist is very different from understanding their
+        features and limitations, not to mention exactly how widely supported they really are on
+        current and legacy browsers.
+      </p>
+      <p>
+        If you’re using a hi-fi piece of production software that embeds videos in HTML, it may do
+        nothing more than ask for the location of your video file. It’s not going to necessarily
+        alert you to issues users might encounter, or provide fallbacks for you for users with older
+        or less capable browsers. And if it does provide a fallback, it might not be the kind of
+        fallback you want to present.
+      </p>
+      <p>
+        Those kinds of concerns illustrate why lo-fi production is so dependent on research, and why
+        GUI-driven software that promises to deliver solutions to those kinds of problems should be
+        treated with such suspicion.
+      </p>
+      <p>
+        It doesn’t take much research to find hi-fi production technologies. They’re marketed at
+        every turn, and have plenty of brand-name recognition. They come pre-installed, often in
+        broken/incomplete form, on consumer PCs, and are likely on most of the machines in the
+        computer labs at schools and universities around the world. They’re also on the computers
+        found in most office cubicles, which more than any other scene of computing seems to be the
+        primary inspiration for campus and personal computing as well.
+      </p>
+      <p>
+        Ask someone why they chose a particular technology for a project, and you will often find
+        one little feature driving the decision. It’s astounding, for example, to learn how
+        frequently people choose to set up WordPress to run a small website simply because they
+        wanted a way to repeat the navigation across the four or five pages that made up the site.
+        For that one feature, they pay the tax of securing a database connection and applying
+        software updates for the life of the project, lest the infamous
+        <a href="https://wordpress.org/search/pharma+hack">pharma hack</a> or one of its many
+        variants compromise the site.
+      </p>
+      <p>
+        On its face, something like WordPress looks lo-fi. WordPress is all open source, all built
+        on a simple setup of lo-fi technologies: the LAMP stack, or Linux, Apache, MySQL, and PHP.
+        But it’s actually the MySQL database that requires a closer look and further research. A
+        database might be lo-fi on its surface, but a database is best employed only under one of
+        two conditions, usually both: first, if there are going to be far more records than can
+        be reasonably handled by flat files (that is, a database record per page of a website,
+        rather than an HTML file per page). Second, if database-like things are going to be done to
+        those records: sorting, counting, joining, and so on, in the context of more read/write
+        operations than can be handled by flat files. A five-page website that’s infrequently
+        updated does not fit that bill.
+      </p>
+      <p>
+        The kinds of research required for lo-fi production is always aimed at a particular problem.
+        Maybe it's how to handle templating in a lo-fi way. If a solution includes a database or an
+        oversized code base, more research is needed. Maybe, as in the earlier CSS
+        <code>@font-face</code> example, it’s the problem of loading a custom typeface onto a web
+        page. Which opens up questions like <em>Why that typeface?</em> And then <em>How to load the
+        custom face?</em> And that in turn should open up an investigation of to what the
+        consequences are, both in terms of legality (font licensing is a particularly thorny issue)
+        and user-experience: typefaces eat up bandwidth like any other media asset. Is it worth the
+        potential expense, on metered connections, and wait to load the typeface? Especially when
+        adequate, if not perfect, typefaces are readily available on the reader's device. Then there
+        are other considerations: Certain typefaces, particularly icon fonts, map letters and
+        numbers to particular icons for ease of use, which may result in weird accessibility issues
+        for users of screen-reading software. On certain displays, typefaces that have not been
+        manually hinted may look just terrible, undercutting the very aesthetic motivation for
+        loading a custom typeface to begin with.
+      </p>
     </dd>
 
     <dt data-fragment="six">6. Version control. Always. Everywhere. For everything.</dt>
@@ -528,7 +598,59 @@
           <cite><span>Travis Swicegood,</span> Pragmatic Version Control Using Git</cite>
         </p>
       </blockquote>
-
+      <p>
+        Next to the plain-text editor, there is no more important piece of software in a lo-fi stack
+        than a version control system. It is the piece that makes experimentation possible, reduces
+        the friction of collaboration across time, space, and platforms, and makes learning and the
+        sorely lacking component of revision a central part of digital expression.
+      </p>
+      <p>
+        With little variation, version control systems (VCSs) are organize projects into
+        repositories. The repository is both the files that make up the project, and their
+        history. In some VCSs, that history is limited to a certain number of most-recent
+        changes; on others, repository’s history goes back to the very beginning of the project.
+      </p>
+      <p>
+        Git is probably the most widely known VCS, thanks in no small part to GitHub, a code-hosting
+        site based on Git that is not at all required for using Git itself. But there are many
+        other version-control systems available. The best of them share one primary feature with
+        Git, and that is that they’re fully distributed: any one copy of the repository is
+        independent from any other copy. That means work can go on uninterrupted even if you’re
+        without an internet connection, and it frees you to work however you please without making
+        having to make all of your work public.
+      </p>
+      <p>
+        One of the necessities of lo-fi production is that a single project is often split over
+        multiple files. Even a basic web page, for example, has an HTML file that might load
+        multiple different CSS and JavaScript files as well as different images and other media,
+        each in their own files.
+      </p>
+      <p>
+        There are many benefits to that, although the obvious drawback is that a single change, such
+        as rewriting the copy for a headline and restyling it in CSS for better readability, is the
+        result of changes to multiple files. Using the file system as version control by creating a
+        series of files like <code>index-old-01.html</code>, <code>index-old-02.html</code>, etc.
+        quickly falls apart when it comes to files referencing one another, which is of course
+        essential to lo-fi production.
+      </p>
+      <p>
+        But version control isn’t just for tracking changes. Many version control systems act as
+        development platforms not only to track changes, but act on them. Git, for example, includes
+        the ability to run scripts before and after certain actions. Pushing changes to a remote
+        server, for example, can trigger a script that moves the updated files into place on a
+        world-viewable web server. Rather than messing around with error-prone, bandwidth-hungry FTP
+        software, a simple <code>git push</code> from the command line is all it takes to have the
+        latest version world-available. Projects like Capistrano add in their own advanced
+        functionality on top of Git to handle more complex development stacks that include databases
+        and things like that.
+      </p>
+      <p>
+        Version control is also essential to learning new languages and frameworks. Habitually
+        creating repositories for working through examples in books and tutorials make it much
+        easier to spot changes that might not directly be mentioned by the author. The use of
+        branches also support exploratory changes that deviate from the book or tutorial’s advice.
+        And that’s often where deeper learning can happen.
+      </p>
     </dd>
   </dl>
 
