@@ -531,18 +531,18 @@
         Choose the cheapest laptop loaded with the most awful bloatware. The mobile phone with the
         smallest, ugliest little display. Disable, if you can, the LTE internet connection to see
         the 2G world of the people who’ve already burned through their pitiful three-gigabyte LTE
-        data allotment for the month, perhaps thanks to a monstrous PDF file someone else attached
-        to an email without thinking for a moment what consequences that might have.
+        data allotment for the month, perhaps thanks to a monstrous PDF file someone sent as an
+        email attachment without thinking for a moment what consequences that might have.
       </p>
       <p>
         Producing accessibile digital artifacts is neither an end in itself nor a testament to the
         supremacy of technology over human concerns. Rather, accessible artifacts arise from the
         equal application of care and attention to detail that is traditionally expected of content.
-        That means accepting the gift that is designing first for the most constrained devices and
-        users. Constraint is not a limitation on creative expression; it is a baseline experience
-        that demands as much as possible from as little as possible. Constraints invite careful
-        investigation as to what matters most, whether in terms of user-interface design or loading
-        media elements.
+        That means accepting the gift that comes from designing first for the most constrained
+        devices and users. Constraint is not a limitation on creative expression; it is a baseline
+        experience that demands as much as possible from as little as possible. Constraints invite
+        careful investigation as to what matters most, whether in terms of user-interface design or
+        loading media elements.
       </p>
       <p>
         It is from that solid baseline that additional features and functionality can be added, in
@@ -565,7 +565,7 @@
       </blockquote>
 
       <p>
-        It used to be necessary to employ Flash to handle audio and video, or for web typography
+        It used to be necessary to employ Flash to handle audio and video or present web typography
         beyond commonly installed system fonts. But that’s no longer the case. HTML5’s
         <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags are now widely supported, as
         is the CSS <code>@font-face</code> property.
@@ -573,7 +573,10 @@
       <p>
         Of course, <em>that</em> those technologies exist is very different from understanding their
         features and limitations, not to mention exactly how widely supported they really are on
-        current and legacy browsers.
+        current and legacy browsers. (And if you want to lose all hope and an afternoon, read up on
+        the state of CODECs and media containers for delivering video files across all browsers.
+        It’s depressing. But the thing that will most help the situation improve is further research
+        and involvement from a larger, more diverse group of people.)
       </p>
       <p>
         If you’re using a hi-fi piece of production software that embeds videos in HTML, it may do
@@ -584,55 +587,63 @@
       </p>
       <p>
         Those kinds of concerns illustrate why lo-fi production is so dependent on research, and why
-        GUI-driven software that promises to deliver solutions to those kinds of problems should be
-        treated with such suspicion.
+        GUI-driven software that promises to deliver one-click solutions to those kinds of problems
+        should be treated with suspicion.
       </p>
       <p>
         It doesn’t take much research to find hi-fi production technologies. They’re marketed at
-        every turn, and have plenty of brand-name recognition. They come pre-installed, often in
-        broken/incomplete form, on consumer PCs, and are likely on most of the machines in the
+        every turn and have plenty of brand-name recognition. They come pre-installed, often in
+        broken/incomplete form, on consumer PCs, and are likely on many of the machines in the
         computer labs at schools and universities around the world. They’re also on the computers
         found in most office cubicles, which more than any other scene of computing seems to be the
-        primary inspiration for campus and personal computing as well.
+        primary inspiration for both campus and personal computing.
       </p>
       <p>
         Ask someone why they chose a particular technology for a project, and you will often find
-        one little feature driving the decision. It’s astounding, for example, to learn how
-        frequently people choose to set up WordPress to run a small website simply because they
-        wanted a way to repeat the navigation across the four or five pages that made up the site.
-        For that one feature, they pay the tax of securing a database connection and applying
-        software updates for the life of the project, lest the infamous
+        one little feature driving the decision. It’s astounding, for example, to discover that
+        people choose to set up WordPress to run a small website simply because they wanted a way to
+        repeat the navigation across the four or five pages that made up the site. For that one
+        feature, they pay the tax of securing a database connection and applying software updates
+        for the life of the project, lest the infamous
         <a href="https://wordpress.org/search/pharma+hack">pharma hack</a> or one of its many
-        variants compromise the site.
+        variants compromise the site. Had such a small site been built with basic HTML, or a static
+        site generator like Jekyll or Wintersmith, no updates beyond those routine to the web server
+        itself would likely be needed.
       </p>
       <p>
         On its face, something like WordPress looks lo-fi. WordPress is all open source, all built
         on a simple setup of lo-fi technologies: the LAMP stack, or Linux, Apache, MySQL, and PHP.
-        But it’s actually the MySQL database that requires a closer look and further research. A
+        But it’s actually the MySQL database that invites a closer look and further research. A
         database might be lo-fi on its surface, but a database is best employed only under one of
-        two conditions, usually both: first, if there are going to be far more records than can
+        two conditions, usually both: first, there must be far more records than can
         be reasonably handled by flat files (that is, a database record per page of a website,
-        rather than an HTML file per page). Second, if database-like things are going to be done to
+        rather than an HTML file per page). Second, database-like things must routinely be done to
         those records: sorting, counting, joining, and so on, in the context of more read/write
         operations than can be handled by flat files. A five-page website that’s infrequently
         updated does not fit that bill.
       </p>
       <p>
         The kinds of research required for lo-fi production is always aimed at a particular problem.
-        Maybe it's how to handle templating in a lo-fi way. If a solution includes a database or an
-        oversized code base, more research is needed. Maybe, as in the earlier CSS
+        Maybe it’s how to handle templating in a lo-fi way: if a solution includes a database or an
+        oversized code library, more research is needed. Or maybe, as in the earlier CSS
         <code>@font-face</code> example, it’s the problem of loading a custom typeface onto a web
         page. Which opens up questions like <em>Why that typeface?</em> And then <em>How to load the
-        custom face?</em> And that in turn should open up an investigation of to what the
+        custom face?</em> And that in turn should open up an investigation to what the
         consequences are, both in terms of legality (font licensing is a particularly thorny issue)
         and user-experience: typefaces eat up bandwidth like any other media asset. Is it worth the
         potential expense, on metered connections, and wait to load the typeface? Especially when
-        adequate, if not perfect, typefaces are readily available on the reader's device. Then there
-        are other considerations: Certain typefaces, particularly icon fonts, map letters and
+        adequate, if not perfect, typefaces may be readily available on the reader’s device? Then
+        there are other considerations: Certain typefaces, particularly icon fonts, map letters and
         numbers to particular icons for ease of use, which may result in weird accessibility issues
         for users of screen-reading software. On certain displays, typefaces that have not been
         manually hinted may look just terrible, undercutting the very aesthetic motivation for
         loading a custom typeface to begin with.
+      </p>
+      <p>
+        In lo-fi production, every single feature is a potential avenue for research. Nothing, not
+        even something as low-level as a typeface, should be mindlessly dropped in and glossed over.
+        And particularly when only a hi-fi solution seems to viable, there is always the need to
+        push a little harder on the actual production problem, and research accordingly.
       </p>
     </dd>
 
@@ -640,7 +651,8 @@
     <dd>
       <blockquote>
         <p>
-          Having the entire history of your project available to you is the key benefit to any version control system.
+          Having the entire history of your project available to you is the key benefit to any
+          version control system.
           <cite><span>Travis Swicegood,</span> Pragmatic Version Control Using Git</cite>
         </p>
       </blockquote>
@@ -651,44 +663,46 @@
         sorely lacking component of revision a central part of digital expression.
       </p>
       <p>
-        With little variation, version control systems (VCSs) are organize projects into
+        With minor variations, version control systems (VCSs) organize projects into
         repositories. The repository is both the files that make up the project, and their
         history. In some VCSs, that history is limited to a certain number of most-recent
-        changes; on others, repository’s history goes back to the very beginning of the project.
+        changes; on others, the repository’s history goes back to the very beginning of the project.
       </p>
       <p>
         Git is probably the most widely known VCS, thanks in no small part to GitHub, a code-hosting
-        site based on Git that is not at all required for using Git itself. But there are many
-        other version-control systems available. The best of them share one primary feature with
-        Git, and that is that they’re fully distributed: any one copy of the repository is
-        independent from any other copy. That means work can go on uninterrupted even if you’re
-        without an internet connection, and it frees you to work however you please without making
-        having to make all of your work public.
+        site based on Git that is in no way required for using Git itself. But there are many other
+        version-control systems available. The best of them share with Git one primary feature, and
+        that is that they’re fully distributed: any one copy of the repository is independent from
+        any other copy. That means work can go on uninterrupted even if you’re without an internet
+        connection, and it frees you to work however you please without making having to make all of
+        your work public. But when work is ready to be shared publicly or with a team of
+        collaborators, the VCS steps in to assist in sharing that work, not email attachments or
+        cloud-storage services.
       </p>
       <p>
         One of the necessities of lo-fi production is that a single project is often split over
         multiple files. Even a basic web page, for example, has an HTML file that might load
         multiple different CSS and JavaScript files as well as different images and other media,
-        each in their own files.
+        each in their own files. There are many benefits to that, although the obvious drawback is
+        that a single change, such as rewriting the copy for a headline and restyling it in CSS for
+        better readability, requires changes to multiple files. Using the file system as version
+        control by creating a series of files like <code>index-old-01.html</code>,
+        <code>index-old-02.html</code>, etc. quickly falls apart when files need to reference one
+        another through URLs or load/include statements. A good version control system takes that
+        burden away from the file system, while having no problem at all with recording a single
+        change across multiple files.
       </p>
       <p>
-        There are many benefits to that, although the obvious drawback is that a single change, such
-        as rewriting the copy for a headline and restyling it in CSS for better readability, is the
-        result of changes to multiple files. Using the file system as version control by creating a
-        series of files like <code>index-old-01.html</code>, <code>index-old-02.html</code>, etc.
-        quickly falls apart when it comes to files referencing one another, which is of course
-        essential to lo-fi production.
-      </p>
-      <p>
-        But version control isn’t just for tracking changes. Many version control systems act as
-        development platforms not only to track changes, but act on them. Git, for example, includes
-        the ability to run scripts before and after certain actions. Pushing changes to a remote
-        server, for example, can trigger a script that moves the updated files into place on a
-        world-viewable web server. Rather than messing around with error-prone, bandwidth-hungry FTP
-        software, a simple <code>git push</code> from the command line is all it takes to have the
-        latest version world-available. Projects like Capistrano add in their own advanced
+        But version control isn’t just for recording changes. Many version control systems act as
+        development platforms not only to record changes, but act on them. Git, for example,
+        includes the ability to run scripts before and after certain actions. Pushing changes to a
+        remote server, for example, can trigger a script that moves the updated files into place on
+        a world-viewable web server. Rather than messing around with error-prone, bandwidth-hungry
+        FTP software, a simple <code>git push</code> from the command line is all it takes to have
+        the latest version world-available. Projects like Capistrano add in their own advanced
         functionality on top of Git to handle more complex development stacks that include databases
-        and things like that.
+        and other services that require configuration and restarts as part of deploying a project to
+        a live web server.
       </p>
       <p>
         Version control is also essential to learning new languages and frameworks. Habitually
@@ -696,6 +710,16 @@
         easier to spot changes that might not directly be mentioned by the author. The use of
         branches also support exploratory changes that deviate from the book or tutorial’s advice.
         And that’s often where deeper learning can happen.
+      </p>
+      <p>
+        For those who teach, version control represents an essential, missing part of digital
+        pedagogy. What matters in student work is not what the project is at any given moment (from
+        a first draft to a final project submission). What matters is what it was, and what it next
+        became. In between those two moments is where learning should take place. A student coming
+        for help with a broken project that used to be working can, with the assistance of version
+        control, trace the exact moment in time it ceased to function. The instructor in turn learns
+        of a key piece of teaching that might have failed, or an object lesson to teach from in the
+        future.
       </p>
     </dd>
   </dl>
