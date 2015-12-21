@@ -157,6 +157,9 @@ h1,h2 {
   color: #b58900; /* Yellow Solarized accent color */
   font-weight: bold;
 }
+code {
+  color: #d33682;
+}
 /* ASCII art */
 pre {
   color: #268bd2;
