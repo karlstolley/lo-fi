@@ -19,6 +19,13 @@ jQuery.noConflict();
       var text = $(this).text().slice(0,-1); // Cut off the comma
       $(this).html(text);
     });
+    // Conform to Kairos house style to open links in a new browsing context (tab, window depending
+    // on the user-agent's handling). I do not agree with this style, but the method here will keep
+    // the markup free from any additional directives, like rel-external or a hard-coded target
+    // attribute in the HTML.
+    // Note that in the HTML5 spec, target="_blank" *is* permitted (it was not in XHTML). See
+    // http://www.w3.org/TR/html5/browsers.html#valid-browsing-context-name-or-keyword
+    $('#page a[href^="http"]').attr('target','_blank');
     // Grabbing breakpoints from the CSS media queries using a technique outlined at
     //https://www.lullabot.com/articles/importing-css-breakpoints-into-javascript
     var breakpoint = {};
