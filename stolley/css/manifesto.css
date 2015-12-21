@@ -297,6 +297,9 @@ h2:before {
 .main dd, .commentary {
   font-family: "Fira Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.35;
+  -moz-font-variant-ligatures: common-ligatures;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
 }
 #manifesto-points dd {
   color: #073642;
