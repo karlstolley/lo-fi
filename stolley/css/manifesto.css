@@ -159,6 +159,7 @@ h1,h2 {
 }
 code {
   color: #d33682;
+  font-family: "Fira Mono", Menlo, Consolas, "Courier New", Courier, mono;
 }
 /* ASCII art */
 pre {
