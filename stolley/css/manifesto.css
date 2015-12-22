@@ -215,7 +215,11 @@ header,
 .supporting,
 footer,
 .main h2 {
- padding: 0 1.2em 0 1.2em;
+  padding: 0 1.2em 0 1.2em;
+}
+.main > .commentary {
+  margin-left: 1.2em;
+  margin-right: 1.2em;
 }
 .main dt,
 .main dd {
@@ -493,6 +497,10 @@ abbr[title].expanded {
   .main dd {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .main > .commentary {
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .main blockquote cite {
     text-align: right;
