@@ -448,15 +448,6 @@ li .commentary {
   background: #073642;
   border: 0;
 }
-.csspositionsticky #manifesto-points {
-  position: relative;
-}
-.csspositionsticky #manifesto-points.expanded dt {
-  top: 0px;
-  position: -webkit-sticky;
-  position: sticky;
-  min-height: 4em;
-}
 body:after {
   content: "sm";
   display: none;
@@ -486,11 +477,7 @@ body:after {
 abbr[title].expanded {
   color: inherit;
 }
-@media screen and (min-width: 23.4em) {
-  .csspositionsticky #manifesto-points.expanded dt {
-    min-height: 3em;
-  }
-}
+
 @media screen and (min-width: 24em) {
   header,
   .supporting,
@@ -547,11 +534,7 @@ abbr[title].expanded {
     content: "— "; /* Em dash */
   }
 }
-@media screen and (min-width: 55em) {
-  .csspositionsticky #manifesto-points.expanded dt {
-    min-height: 0;
-  }
-}
+
 @media screen and (min-width: 60em) {
   body:after {
     content: "large";
