@@ -308,6 +308,7 @@ h2:before {
 #manifesto-points dd {
   color: #073642;
   background-color: #eee8d5;
+  padding-bottom: 1em;
 }
 .main i,
 .main em,
@@ -431,22 +432,21 @@ li .commentary {
 .js #manifesto-points dt a:focus {
   color: inherit;
 }
-.js #manifesto-points {
+.js #manifesto-points dt:last-of-type {
   border-bottom: 1px dashed #859900;
 }
 .js #manifesto-points dd {
   display: none;
-}
-.js #manifesto-points.expanded {
-  margin-top: 1px; /* Prevent the slight little jump from disappearing border */
-  border: 0;
 }
 .js #manifesto-points.expanded dd {
   display: block;
 }
 .js #manifesto-points.expanded dt {
   background: #073642;
-  border: 0;
+  border-top: 1px solid #073642;
+}
+.js #manifesto-points.expanded dt:last-of-type {
+  border-bottom: 1px solid #073642;
 }
 body:after {
   content: "sm";
@@ -539,10 +539,41 @@ abbr[title].expanded {
 }
 
 @media screen and (min-width: 60em) {
+  html {
+    font-size: 120%;
+  }
   body:after {
     content: "large";
   }
+  header,
+  .supporting,
+  footer,
+  .main h2,
+  .main dt {
+    padding: 0;
+    margin-left: 12.5%;
+    margin-right: 6.25%;
+    max-width: 44em;
+  }
+  .main h2 {
+    text-indent: -1.8em;
+  }
+  .main dd {
+    padding: 0;
+  }
+  .main dd > *,
+  .main > .commentary {
+    margin-left: 12.5%;
+    margin-right: 6.25%;
+    max-width: 40em;
+  }
+  .main dd > p {
+    max-width: 44em;
+  }
+  .main dd blockquote {
+    max-width: 31.428571429em;
+  }
   pre .flex {
-    font-size: 2.0vw;
+    font-size: 1em;
   }
 }
