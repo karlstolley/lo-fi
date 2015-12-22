@@ -308,7 +308,11 @@ h2:before {
 .main i,
 .main em,
 .main b,
-.main strong {
+.main strong,
+.commentary i,
+.commentary em,
+.commentary b,
+.commentary strong {
   color: inherit;
 }
 .main blockquote {
@@ -337,7 +341,9 @@ h2:before {
 #ascii *:before,
 #ascii *:after,
 .main dl *:before,
-.main dl *:after {
+.main dl *:after,
+.commentary *:before,
+.commentary *:after {
   content: none;
   margin: 0;
   padding: 0;
@@ -366,6 +372,10 @@ ul.references cite {
   padding-right: 0; /* Lose the extra padding on h2:before, too */
 }
 
+#ascii {
+  margin-bottom: 1em;
+}
+
 .commentary {
   color: #002b36;
   background: #b58900;
@@ -374,6 +384,9 @@ ul.references cite {
   margin-bottom: 1em;
   font-size: inherit;
   line-height: inherit;
+}
+li .commentary {
+  margin-top: 1em;
 }
 .commentary p {
   padding-bottom: .5em;
