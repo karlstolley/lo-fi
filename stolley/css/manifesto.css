@@ -200,7 +200,10 @@ abbr.expanded {
   padding: 0;
   text-decoration: none;
 }
-
+#navigation a {
+  text-decoration: none;
+  color: #2aa198;
+}
 
 
 
@@ -216,6 +219,15 @@ header,
 footer,
 .main h2 {
   padding: 0 1.2em 0 1.2em;
+}
+header {
+  position: relative;
+}
+#navigation {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 1.2em;
 }
 .main > .commentary {
   margin-left: 1.2em;
@@ -408,6 +420,9 @@ li .commentary {
   padding-top: 3em;
   padding-bottom: 1em;
 }
+.js header {
+  padding-top: 2em;
+}
 .js header h1,
 .js header h2,
 .js figcaption#ascii-caption,
@@ -488,6 +503,9 @@ abbr[title].expanded {
     padding-left: 5%;
     padding-right: 5%;
   }
+  #navigation {
+    right: 5%;
+  }
   .main > .commentary {
     margin-left: 5%;
     margin-right: 5%;
@@ -509,6 +527,9 @@ abbr[title].expanded {
   .main dd {
     padding-left: 6.25%;
     padding-right: 6.25%;
+  }
+  #navigation {
+    right: 6.25%;
   }
   body:after {
     content: "med";
@@ -554,6 +575,9 @@ abbr[title].expanded {
     margin-left: 12.5%;
     margin-right: 6.25%;
     max-width: 44em;
+  }
+  #navigation {
+    right: 0;
   }
   .main h2 {
     text-indent: -1.8em;

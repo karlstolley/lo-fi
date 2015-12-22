@@ -210,3 +210,11 @@ blockquote cite span {
 }
 ul.references cite { font-style: italic; } /*Finally, even though Courier isn't the best font for this, italicize the cites*/
 
+/* 2016 edition navigation style */
+#navigation {
+  display: block;
+  text-align: right;
+}
+#navigation a {
+  color: #2aa198;
+}
