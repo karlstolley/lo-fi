@@ -319,6 +319,9 @@ h2:before {
 .commentary strong {
   color: inherit;
 }
+.commentary code {
+  color: #eee8d5;
+}
 .main blockquote {
   font-size: 140%;
   padding-top: 1.4285714286em; /* 2em at font-size: 100% */
