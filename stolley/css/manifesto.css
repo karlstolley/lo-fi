@@ -519,6 +519,9 @@ abbr[title].expanded {
   h2 {
     margin-left: -1.8em;
   }
+  .main dt {
+    text-indent: -1.8em;
+  }
   ol {
     margin-left: 0;
   }
