@@ -200,6 +200,9 @@ abbr.expanded {
   padding: 0;
   text-decoration: none;
 }
+.commentary a {
+  color: #eee8d5;
+}
 #navigation a {
   text-decoration: none;
   color: #2aa198;
