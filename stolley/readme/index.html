@@ -25,6 +25,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic" />
 <script src="../js/modernizr.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+jQuery.noConflict();
+(function($) {
+  $(function() {
+    // Conform to Kairos house style to open links in a new browsing context (tab, window depending
+    // on the user-agent's handling).
+    $('#page a[href^="http"]').attr('target','_blank');
+  });
+})(jQuery);
+</script>
 </head>
 <body>
 <div id="page">
