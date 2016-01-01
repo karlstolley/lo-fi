@@ -418,6 +418,12 @@ li .commentary {
   padding-bottom: 0;
 }
 
+pre.snippit {
+  margin: 0;
+  padding: 0 0 1em 0;
+  overflow: scroll;
+}
+
 /* State Styles (Media Queries and JavaScript-dependent Styles) */
 .nojs header h1 {
   padding-top: 3em;
@@ -575,9 +581,9 @@ abbr[title].expanded {
   .main h2,
   .main dt {
     padding: 0;
-    margin-left: 12.5%;
-    margin-right: 6.25%;
     max-width: 44em;
+    margin-left: 6.25%;
+    margin-right: 6.25%;
   }
   #navigation {
     right: 0;
@@ -590,7 +596,7 @@ abbr[title].expanded {
   }
   .main dd > *,
   .main > .commentary {
-    margin-left: 12.5%;
+    margin-left: 6.25%;
     margin-right: 6.25%;
     max-width: 40em;
   }
@@ -602,5 +608,23 @@ abbr[title].expanded {
   }
   pre .flex {
     font-size: 1em;
+  }
+}
+@media screen and (min-width: 70em) {
+  header,
+  .supporting,
+  footer,
+  .main h2,
+  .main dt {
+    margin-left: 12.5%;
+    margin-right: 6.25%;
+  }
+  .main dd > *,
+  .main > .commentary {
+    margin-left: 12.5%;
+    margin-right: 6.25%;
+  }
+  pre.snippit {
+    overflow: visible;
   }
 }
